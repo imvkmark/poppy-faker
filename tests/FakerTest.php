@@ -11,7 +11,7 @@ class FakerTest extends TestCase
 	public function setUp(): void
 	{
 		parent::setUp();
-		$this->faker = Factory::create();
+		$this->faker = Factory::create('zh_CN');
 	}
 
 	public function testBase()
