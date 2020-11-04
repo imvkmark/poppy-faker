@@ -1,17 +1,20 @@
 <?php namespace System\Tests\Classes;
 
 use OverflowException;
-use Poppy\Extension\Faker\Factory;
 use Poppy\Framework\Application\TestCase;
+use Poppy\Framework\Exceptions\FakerException;
 
 class FakerTest extends TestCase
 {
 	protected $faker;
 
+	/**
+	 * @throws FakerException
+	 */
 	public function setUp(): void
 	{
 		parent::setUp();
-		$this->faker = Factory::create('zh_CN');
+		$this->faker = $this->pyFaker();
 	}
 
 	public function testBase()
