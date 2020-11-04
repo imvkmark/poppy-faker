@@ -12,6 +12,7 @@
  * @method string title(string $gender = null)
  * @property string       $titleMale
  * @property string       $titleFemale
+ * @property string       $idNumber
  *
  * @property string       $citySuffix
  * @property string       $cityPrefix
@@ -262,11 +263,6 @@ class Generator
 		return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
 	}
 
-	protected function callFormatWithMatches($matches)
-	{
-		return $this->format($matches[1]);
-	}
-
 	/**
 	 * @param string $attribute
 	 *
@@ -291,5 +287,10 @@ class Generator
 	public function __destruct()
 	{
 		$this->seed();
+	}
+
+	protected function callFormatWithMatches($matches)
+	{
+		return $this->format($matches[1]);
 	}
 }

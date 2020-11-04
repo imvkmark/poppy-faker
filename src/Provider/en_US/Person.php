@@ -126,4 +126,18 @@ class Person extends \Poppy\Extension\Faker\Provider\Person
 
 		return sprintf("%03d-%02d-%04d", $area, $group, $serial);
 	}
+
+
+	public static function idNumber()
+	{
+		do {
+			$agt_no = mt_rand(100000000, 900000000);
+			$valid  = true;
+			if (preg_match('/(\d)\1\1/', $agt_no))
+				$valid = false; // Same digit three times consecutively
+			elseif (preg_match('/(\d).*?\1.*?\1.*?\1/', $agt_no))
+				$valid = false; // Same digit four times in string
+		} while ($valid === false);
+		return $agt_no;
+	}
 }
