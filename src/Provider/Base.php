@@ -95,8 +95,8 @@ class Base
 	 * </code>
 	 *
 	 * @param \Closure $validator  A function returning true for valid values
-	 * @param integer $maxRetries Maximum number of retries to find a unique value,
-	 *                            After which an OverflowException is thrown.
+	 * @param integer  $maxRetries Maximum number of retries to find a unique value,
+	 *                             After which an OverflowException is thrown.
 	 * @return ValidGenerator A proxy class returning only valid values
 	 * @throws OverflowException When no valid value can be found by iterating $maxRetries times
 	 *
