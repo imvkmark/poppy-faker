@@ -32,11 +32,6 @@
 			"Poppy\\Faker\\Test\\": "test/"
 		}
 	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.9-dev"
-		}
-	},
 	"config": {
 		"sort-packages": true
 	}
