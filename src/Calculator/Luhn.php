@@ -1,4 +1,4 @@
-<?php namespace Poppy\Extension\Faker\Calculator;
+<?php namespace Poppy\Faker\Calculator;
 
 use InvalidArgumentException;
 

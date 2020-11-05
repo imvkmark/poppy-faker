@@ -1,7 +1,7 @@
 {
-	"name": "poppy/ext-faker",
+	"name": "poppy/faker",
 	"type": "library",
-	"description": "Faker is a PHP library that generates fake data for you.",
+	"description": "Poppy Faker is a PHP library that generates fake data for zh user.",
 	"keywords": [
 		"faker",
 		"fixtures",
@@ -9,6 +9,9 @@
 	],
 	"license": "MIT",
 	"authors": [
+		{
+			"name": "Mark Zhao"
+		},
 		{
 			"name": "François Zaninotto"
 		}
@@ -21,12 +24,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Poppy\\Extension\\Faker\\": "src/"
+			"Poppy\\Faker\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Poppy\\Extension\\Faker\\Test\\": "test/"
+			"Poppy\\Faker\\Test\\": "test/"
 		}
 	},
 	"extra": {

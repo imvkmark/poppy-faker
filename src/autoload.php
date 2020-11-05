@@ -15,7 +15,7 @@ spl_autoload_register(function ($className) {
 		$className = substr($className, $lastNsPos + 1);
 		$fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
 	}
-	$fileName = __DIR__ . DIRECTORY_SEPARATOR . $fileName . $className . '.php';
+	$fileName = str_replace('src/Poppy/Faker/', 'src/', __DIR__ . DIRECTORY_SEPARATOR . $fileName . $className . '.php');
 	if (file_exists($fileName)) {
 		require $fileName;
 

@@ -1,8 +1,11 @@
-<?php namespace Poppy\Extension\Faker;
+<?php namespace Poppy\Faker;
+
+use InvalidArgumentException;
+use OverflowException;
 
 /**
  * Proxy for other generators, to return only valid values. Works with
- * Faker\Generator\Base->valid()
+ * Poppy\Faker\Generator\Base->valid()
  */
 class ValidGenerator
 {
@@ -23,7 +26,7 @@ class ValidGenerator
 			};
 		}
 		elseif (!is_callable($validator)) {
-			throw new \InvalidArgumentException('valid() only accepts callables as first argument');
+			throw new InvalidArgumentException('valid() only accepts callables as first argument');
 		}
 		$this->generator  = $generator;
 		$this->validator  = $validator;
@@ -55,7 +58,7 @@ class ValidGenerator
 			$res = call_user_func_array([$this->generator, $name], $arguments);
 			$i++;
 			if ($i > $this->maxRetries) {
-				throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a valid value', $this->maxRetries));
+				throw new OverflowException(sprintf('Maximum retries of %d reached without finding a valid value', $this->maxRetries));
 			}
 		} while (!call_user_func($this->validator, $res));
 

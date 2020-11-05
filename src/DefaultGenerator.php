@@ -1,4 +1,4 @@
-<?php namespace Poppy\Extension\Faker;
+<?php namespace Poppy\Faker;
 
 /**
  * This generator returns a default value for all called properties

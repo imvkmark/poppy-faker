@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\en_US;
+<?php namespace Poppy\Faker\Provider\en_US;
 
-class Text extends \Poppy\Extension\Faker\Provider\Text
+class Text extends \Poppy\Faker\Provider\Text
 {
 	/**
 	 * Project Gutenberg's Alice's Adventures in Wonderland, by Lewis Carroll

@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
-class Payment extends \Poppy\Extension\Faker\Provider\Payment
+class Payment extends \Poppy\Faker\Provider\Payment
 {
 	/**
 	 * @see https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C%E5%88%97%E8%A1%A8

@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
-class Internet extends \Poppy\Extension\Faker\Provider\Internet
+class Internet extends \Poppy\Faker\Provider\Internet
 {
 	protected static $freeEmailDomain = [
 		'gmail.com', 'yahoo.com', 'hotmail.com', '126.com', '163.com', 'qq.com', 'sohu.com', 'sina.com',

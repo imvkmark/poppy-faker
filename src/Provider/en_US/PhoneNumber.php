@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\en_US;
+<?php namespace Poppy\Faker\Provider\en_US;
 
-class PhoneNumber extends \Poppy\Extension\Faker\Provider\PhoneNumber
+class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
 {
 	/**
 	 * @see https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers#United_States.2C_Canada.2C_and_other_NANP_countries

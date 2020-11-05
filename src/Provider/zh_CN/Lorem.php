@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
-class Lorem extends \Poppy\Extension\Faker\Provider\Lorem
+class Lorem extends \Poppy\Faker\Provider\Lorem
 {
 	protected static $wordList = [
 		'的', '一', '是', '了', '我', '不', '人', '在', '他', '有', '这', '个', '上', '们', '来', '到', '时', '大', '地', '为', '子', '中',
@@ -69,7 +69,7 @@ class Lorem extends \Poppy\Extension\Faker\Provider\Lorem
 			$nbWords = self::randomizeNbElements($nbWords);
 		}
 
-		$words    = static::words($nbWords);
+		$words = static::words($nbWords);
 
 		return implode('', $words) . '.';
 	}

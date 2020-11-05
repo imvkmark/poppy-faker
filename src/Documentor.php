@@ -1,4 +1,4 @@
-<?php namespace Poppy\Extension\Faker;
+<?php namespace Poppy\Faker;
 
 class Documentor
 {
@@ -25,7 +25,7 @@ class Documentor
 			$formatters[$providerClass] = [];
 			$refl                       = new \ReflectionObject($provider);
 			foreach ($refl->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflmethod) {
-				if ($reflmethod->getDeclaringClass()->getName() == 'Poppy\Extension\Faker\Provider\Base' && $providerClass != 'Poppy\Extension\Faker\Provider\Base') {
+				if ($reflmethod->getDeclaringClass()->getName() == 'Poppy\Faker\Provider\Base' && $providerClass != 'Poppy\Faker\Provider\Base') {
 					continue;
 				}
 				$methodName = $reflmethod->name;

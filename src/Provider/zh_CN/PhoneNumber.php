@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
-class PhoneNumber extends \Poppy\Extension\Faker\Provider\PhoneNumber
+class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
 {
 	protected static $operators = [
 		134, 135, 136, 137, 138, 139, 147, 150, 151, 152, 157, 158, 159, 1705, 178, 182, 183, 184, 187, 188, // China Mobile

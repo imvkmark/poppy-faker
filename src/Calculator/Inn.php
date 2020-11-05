@@ -1,6 +1,6 @@
 <?php
 
-namespace Poppy\Extension\Faker\Calculator;
+namespace Poppy\Faker\Calculator;
 
 class Inn
 {

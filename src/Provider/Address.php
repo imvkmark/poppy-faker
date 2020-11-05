@@ -1,4 +1,4 @@
-<?php namespace Poppy\Extension\Faker\Provider;
+<?php namespace Poppy\Faker\Provider;
 
 class Address extends Base
 {
@@ -20,30 +20,6 @@ class Address extends Base
 	protected static $buildingNumber = ['%#'];
 	protected static $postcode       = ['#####'];
 	protected static $country        = [];
-
-	/**
-	 * @example 'town'
-	 */
-	public static function citySuffix()
-	{
-		return static::randomElement(static::$citySuffix);
-	}
-
-	/**
-	 * @example 'Avenue'
-	 */
-	public static function streetSuffix()
-	{
-		return static::randomElement(static::$streetSuffix);
-	}
-
-	/**
-	 * @example '791'
-	 */
-	public static function buildingNumber()
-	{
-		return static::numerify(static::randomElement(static::$buildingNumber));
-	}
 
 	/**
 	 * @example 'Sashabury'
@@ -76,14 +52,6 @@ class Address extends Base
 	}
 
 	/**
-	 * @example 86039-9874
-	 */
-	public static function postcode()
-	{
-		return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
-	}
-
-	/**
 	 * @example '791 Crist Parks, Sashabury, IL 86039-9874'
 	 */
 	public function address()
@@ -91,6 +59,38 @@ class Address extends Base
 		$format = static::randomElement(static::$addressFormats);
 
 		return $this->generator->parse($format);
+	}
+
+	/**
+	 * @example 'town'
+	 */
+	public static function citySuffix()
+	{
+		return static::randomElement(static::$citySuffix);
+	}
+
+	/**
+	 * @example 'Avenue'
+	 */
+	public static function streetSuffix()
+	{
+		return static::randomElement(static::$streetSuffix);
+	}
+
+	/**
+	 * @example '791'
+	 */
+	public static function buildingNumber()
+	{
+		return static::numerify(static::randomElement(static::$buildingNumber));
+	}
+
+	/**
+	 * @example 86039-9874
+	 */
+	public static function postcode()
+	{
+		return static::toUpper(static::bothify(static::randomElement(static::$postcode)));
 	}
 
 	/**

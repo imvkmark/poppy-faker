@@ -1,54 +1,99 @@
-<?php namespace Poppy\Extension\Faker\Provider;
+<?php namespace Poppy\Faker\Provider;
+
+use InvalidArgumentException;
+use RuntimeException;
 
 /**
- * Depends on image generation from http://lorempixel.com/
+ * Depends on image generation from http://fakeimg.pl/
  */
 class Image extends Base
 {
-	protected static $categories = [
-		'abstract', 'animals', 'business', 'cats', 'city', 'food', 'nightlife',
-		'fashion', 'people', 'nature', 'sports', 'technics', 'transport',
-	];
 
 	/**
 	 * Generate the URL that will return a random image
 	 *
 	 * Set randomize to false to remove the random GET parameter at the end of the url.
-	 *
+	 * https://fakeimg.pl/
 	 * @param integer     $width
 	 * @param integer     $height
-	 * @param string|null $category
-	 * @param bool        $randomize
+	 * @param string      $font_color
+	 * @param string      $bg_color
 	 * @param string|null $word
-	 * @param bool        $gray
-	 *
+	 * @param string      $font noto/lobster
 	 * @return string
-	 * @example 'http://lorempixel.com/640/480/?12345'
-	 *
+	 * @example 'http://fakeimg.pl/640x480'
 	 */
-	public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+	public static function phUrl($width = 640, $height = 480, $font_color = '282828', $bg_color = 'eae0d0', $word = '', $font = '')
 	{
-		$baseUrl = "https://lorempixel.com/";
-		$url     = "{$width}/{$height}/";
+		$baseUrl = "https://fakeimg.pl/";
+		$url     = "{$width}x{$height}/";
 
-		if ($gray) {
-			$url = "gray/" . $url;
+		if ($font_color) {
+			$url .= "{$font_color}/{$bg_color}";
 		}
 
-		if ($category) {
-			if (!in_array($category, static::$categories)) {
-				throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
-			}
-			$url .= "{$category}/";
-			if ($word) {
-				$url .= "{$word}/";
-			}
+		$url .= '?';
+
+		if ($word) {
+			$url .= 'word=' . $word;
+		}
+		if ($font) {
+			$url .= 'font=' . $font;
 		}
 
-		if ($randomize) {
-			$url .= '?' . static::randomNumber(5, true);
+		return $baseUrl . $url;
+	}
+
+	/**
+	 * 头像URL
+	 * https://pravatar.cc/
+	 * @param int    $size
+	 * @param string $type
+	 * @return string
+	 */
+	public static function avatarUrl($size = 300, $type = 'rand')
+	{
+		$baseUrl = "https://pravatar.cc/";
+		if ($size > 1000) {
+			$size = 1000;
+		}
+		$url = $size;
+
+		$url .= '?';
+		if ($type === 'girl') {
+			$images = array_merge([1, 5, 9, 10, 16], range(19, 32), range(36, 49));
+			shuffle($images);
+			$url .= 'img=' . current($images);
+		}
+		if ($type === 'boy') {
+			$images = array_merge([2, 3, 6, 7, 8, 11, 12, 13, 14, 15, 17, 18, 33], range(50, 70));
+			$url    .= 'img=';
 		}
 
+		return $baseUrl . $url;
+	}
+
+
+	/**
+	 * Svg Url
+	 * https://avatars.dicebear.com/
+	 * @param int    $width
+	 * @param int    $height
+	 * @param string $type
+	 * @return string
+	 */
+	public static function svgUrl($width = 300, $height = 300, $type = 'bottts')
+	{
+		$baseUrl = "https://pravatar.cc/";
+		$url     = "$type/" . self::randomNumber(5) . '.svg';
+		$url     .= '?';
+		if ($width) {
+			$url .= "width=" . $width . '&';
+		}
+		if ($height) {
+			$url .= "height=" . $height . '&';
+		}
+		$url = rtrim($url, '&');
 		return $baseUrl . $url;
 	}
 
@@ -57,14 +102,19 @@ class Image extends Base
 	 *
 	 * Requires curl, or allow_url_fopen to be on in php.ini.
 	 *
+	 * @param null $dir
+	 * @param int  $width
+	 * @param int  $height
+	 * @param bool $fullPath
+	 * @return false|RuntimeException|string
 	 * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
 	 */
-	public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
+	public static function image($dir = null, $width = 640, $height = 480, $fullPath = true)
 	{
 		$dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
 		// Validate directory path
 		if (!is_dir($dir) || !is_writable($dir)) {
-			throw new \InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
+			throw new InvalidArgumentException(sprintf('Cannot write to directory "%s"', $dir));
 		}
 
 		// Generate a random filename. Use the server address so that a file
@@ -73,7 +123,7 @@ class Image extends Base
 		$filename = $name . '.jpg';
 		$filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-		$url = static::imageUrl($width, $height, $category, $randomize, $word, $gray);
+		$url = static::phUrl($width, $height);
 
 		// save file
 		if (function_exists('curl_exec')) {
@@ -94,10 +144,10 @@ class Image extends Base
 		}
 		elseif (ini_get('allow_url_fopen')) {
 			// use remote fopen() via copy()
-			$success = copy($url, $filepath);
+			copy($url, $filepath);
 		}
 		else {
-			return new \RuntimeException('The image formatter downloads an image from a remote HTTP server. Therefore, it requires that PHP can request remote hosts, either via cURL or fopen()');
+			return new RuntimeException('The image formatter downloads an image from a remote HTTP server. Therefore, it requires that PHP can request remote hosts, either via cURL or fopen()');
 		}
 
 		return $fullPath ? $filepath : $filename;

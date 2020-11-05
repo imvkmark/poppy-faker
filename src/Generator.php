@@ -1,4 +1,7 @@
-<?php namespace Poppy\Extension\Faker;
+<?php namespace Poppy\Faker;
+
+use DateTime;
+use InvalidArgumentException;
 
 /**
  * @property string       $name
@@ -26,8 +29,8 @@
  * @property string       $address
  * @property string       $state
  * @property string       $country
- * @property float        $latitude
- * @property float        $longitude
+ * @method  float        latitude($min = -90, $max = 90)
+ * @method  float        longitude($min = -180, $max = 180)
  *
  * @property string       $ean13
  * @property string       $ean8
@@ -46,7 +49,7 @@
  * @property string       $creditCardType
  * @property string       $creditCardNumber
  * @method string creditCardNumber($type = null, $formatted = false, $separator = '-')
- * @property \DateTime    $creditCardExpirationDate
+ * @property DateTime     $creditCardExpirationDate
  * @property string       $creditCardExpirationDateString
  * @property array        $creditCardDetails
  * @property string       $bankAccountNumber
@@ -92,13 +95,13 @@
  * @property string       $macAddress
  *
  * @property int          $unixTime
- * @property \DateTime    $dateTime
- * @property \DateTime    $dateTimeAD
+ * @property DateTime     $dateTime
+ * @property DateTime     $dateTimeAD
  * @property string       $iso8601
- * @property \DateTime    $dateTimeThisCentury
- * @property \DateTime    $dateTimeThisDecade
- * @property \DateTime    $dateTimeThisYear
- * @property \DateTime    $dateTimeThisMonth
+ * @property DateTime     $dateTimeThisCentury
+ * @property DateTime     $dateTimeThisDecade
+ * @property DateTime     $dateTimeThisYear
+ * @property DateTime     $dateTimeThisMonth
  * @property string       $amPm
  * @property string       $dayOfMonth
  * @property string       $dayOfWeek
@@ -117,14 +120,14 @@
  * @method string time($format = 'H:i:s', $max = 'now')
  * @method int unixTime($max = 'now')
  * @method string year($max = 'now')
- * @method \DateTime dateTime($max = 'now', $timezone = null)
- * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
- * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
- * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
- * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
- * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
- * @method \DateTime dateTimeThisYear($max = 'now', $timezone = null)
- * @method \DateTime dateTimeThisMonth($max = 'now', $timezone = null)
+ * @method DateTime dateTime($max = 'now', $timezone = null)
+ * @method DateTime dateTimeAd($max = 'now', $timezone = null)
+ * @method DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
+ * @method DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
+ * @method DateTime dateTimeThisCentury($max = 'now', $timezone = null)
+ * @method DateTime dateTimeThisDecade($max = 'now', $timezone = null)
+ * @method DateTime dateTimeThisYear($max = 'now', $timezone = null)
+ * @method DateTime dateTimeThisMonth($max = 'now', $timezone = null)
  *
  * @property string       $md5
  * @property string       $sha1
@@ -249,7 +252,8 @@ class Generator
 				return $this->formatters[$formatter];
 			}
 		}
-		throw new \InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
+		var_dump($formatter);
+		throw new InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
 	}
 
 	/**

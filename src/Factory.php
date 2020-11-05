@@ -1,4 +1,4 @@
-<?php namespace Poppy\Extension\Faker;
+<?php namespace Poppy\Faker;
 
 use InvalidArgumentException;
 
@@ -57,7 +57,7 @@ class Factory
 	 */
 	protected static function findProviderClassname($provider, $locale = '')
 	{
-		$providerClass = 'Poppy\\Extension\\Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
+		$providerClass = 'Poppy\\Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
 		if (class_exists($providerClass, true)) {
 			return $providerClass;
 		}

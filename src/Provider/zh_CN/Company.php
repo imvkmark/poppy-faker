@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
-class Company extends \Poppy\Extension\Faker\Provider\Company
+class Company extends \Poppy\Faker\Provider\Company
 {
 	protected static $formats = [
 		'{{companyPrefix}}{{companySuffix}}',

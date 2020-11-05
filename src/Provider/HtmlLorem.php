@@ -1,7 +1,7 @@
-<?php namespace Poppy\Extension\Faker\Provider;
+<?php namespace Poppy\Faker\Provider;
 
-use Poppy\Extension\Faker\Generator;
-use Poppy\Extension\Faker\UniqueGenerator;
+use Poppy\Faker\Generator;
+use Poppy\Faker\UniqueGenerator;
 
 class HtmlLorem extends Base
 {

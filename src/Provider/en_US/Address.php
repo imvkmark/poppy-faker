@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\en_US;
+<?php namespace Poppy\Faker\Provider\en_US;
 
-class Address extends \Poppy\Extension\Faker\Provider\Address
+class Address extends \Poppy\Faker\Provider\Address
 {
 	protected static $cityPrefix              = ['North', 'East', 'West', 'South', 'New', 'Lake', 'Port'];
 	protected static $citySuffix              = ['town', 'ton', 'land', 'ville', 'berg', 'burgh', 'borough', 'bury', 'view', 'port', 'mouth', 'stad', 'furt', 'chester', 'mouth', 'fort', 'haven', 'side', 'shire'];

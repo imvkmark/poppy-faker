@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
-class Address extends \Poppy\Extension\Faker\Provider\Address
+class Address extends \Poppy\Faker\Provider\Address
 {
 
 	protected static $cites = [

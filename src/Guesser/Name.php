@@ -1,15 +1,15 @@
-<?php namespace Poppy\Extension\Faker\Guesser;
+<?php namespace Poppy\Faker\Guesser;
 
-use \Poppy\Extension\Faker\Provider\Base;
+use \Poppy\Faker\Provider\Base;
 
 class Name
 {
 	protected $generator;
 
 	/**
-	 * @param \Poppy\Extension\Faker\Generator $generator
+	 * @param \Poppy\Faker\Generator $generator
 	 */
-	public function __construct(\Poppy\Extension\Faker\Generator $generator)
+	public function __construct(\Poppy\Faker\Generator $generator)
 	{
 		$this->generator = $generator;
 	}

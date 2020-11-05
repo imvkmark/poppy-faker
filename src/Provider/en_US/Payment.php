@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\en_US;
+<?php namespace Poppy\Faker\Provider\en_US;
 
-class Payment extends \Poppy\Extension\Faker\Provider\Payment
+class Payment extends \Poppy\Faker\Provider\Payment
 {
 	public function bankAccountNumber()
 	{

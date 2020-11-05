@@ -1,4 +1,4 @@
-<?php namespace Poppy\Extension\Faker\Provider;
+<?php namespace Poppy\Faker\Provider;
 
 class Biased extends Base
 {

@@ -1,8 +1,8 @@
-<?php namespace Poppy\Extension\Faker\Provider\zh_CN;
+<?php namespace Poppy\Faker\Provider\zh_CN;
 
 use Exception;
 
-class Person extends \Poppy\Extension\Faker\Provider\Person
+class Person extends \Poppy\Faker\Provider\Person
 {
 	protected static $maleNameFormats = [
 		'{{lastName}}{{firstNameMale}}',

@@ -1,7 +1,7 @@
-<?php namespace Poppy\Extension\Faker\Provider;
+<?php namespace Poppy\Faker\Provider;
 
-use Poppy\Extension\Faker\Calculator\Iban;
-use Poppy\Extension\Faker\Calculator\Luhn;
+use Poppy\Faker\Calculator\Iban;
+use Poppy\Faker\Calculator\Luhn;
 
 class Payment extends Base
 {

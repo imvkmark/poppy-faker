@@ -1,6 +1,6 @@
-<?php namespace Poppy\Extension\Faker\Provider\en_US;
+<?php namespace Poppy\Faker\Provider\en_US;
 
-class Person extends \Poppy\Extension\Faker\Provider\Person
+class Person extends \Poppy\Faker\Provider\Person
 {
 	protected static $maleNameFormats = [
 		'{{firstNameMale}} {{lastName}}',

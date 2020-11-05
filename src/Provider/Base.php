@@ -1,12 +1,12 @@
-<?php namespace Poppy\Extension\Faker\Provider;
+<?php namespace Poppy\Faker\Provider;
 
 use InvalidArgumentException;
 use LengthException;
 use OverflowException;
-use Poppy\Extension\Faker\DefaultGenerator;
-use Poppy\Extension\Faker\Generator;
-use Poppy\Extension\Faker\UniqueGenerator;
-use Poppy\Extension\Faker\ValidGenerator;
+use Poppy\Faker\DefaultGenerator;
+use Poppy\Faker\Generator;
+use Poppy\Faker\UniqueGenerator;
+use Poppy\Faker\ValidGenerator;
 use Traversable;
 
 class Base
