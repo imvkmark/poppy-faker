@@ -85,7 +85,7 @@ class Image extends Base
 	 */
 	public static function svgUrl($width = 300, $height = 300, $type = 'bottts')
 	{
-		$baseUrl = "https://i.pravatar.cc/";
+		$baseUrl = "https://avatars.dicebear.com/api/";
 		$url     = "$type/" . self::randomNumber(5) . '.svg';
 		$url     .= '?';
 		if ($width) {
