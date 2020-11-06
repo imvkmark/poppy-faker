@@ -53,7 +53,7 @@ class Image extends Base
 	 */
 	public static function avatarUrl($size = 300, $type = 'rand')
 	{
-		$baseUrl = "https://pravatar.cc/";
+		$baseUrl = "https://i.pravatar.cc/";
 		if ($size > 1000) {
 			$size = 1000;
 		}
@@ -62,14 +62,15 @@ class Image extends Base
 		$url .= '?';
 		if ($type === 'girl') {
 			$images = array_merge([1, 5, 9, 10, 16], range(19, 32), range(36, 49));
-			shuffle($images);
-			$url .= 'img=' . current($images);
 		}
-		if ($type === 'boy') {
+		elseif ($type === 'boy') {
 			$images = array_merge([2, 3, 6, 7, 8, 11, 12, 13, 14, 15, 17, 18, 33], range(50, 70));
-			$url    .= 'img=';
 		}
-
+		else {
+			$images = range(1, 70);
+		}
+		shuffle($images);
+		$url .= 'img=' . current($images);
 		return $baseUrl . $url;
 	}
 
@@ -84,7 +85,7 @@ class Image extends Base
 	 */
 	public static function svgUrl($width = 300, $height = 300, $type = 'bottts')
 	{
-		$baseUrl = "https://pravatar.cc/";
+		$baseUrl = "https://i.pravatar.cc/";
 		$url     = "$type/" . self::randomNumber(5) . '.svg';
 		$url     .= '?';
 		if ($width) {
