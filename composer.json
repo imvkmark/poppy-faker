@@ -1,0 +1,38 @@
+{
+	"name": "poppy/faker",
+	"type": "library",
+	"description": "Poppy Faker is a PHP library that generates fake data for zh user.",
+	"keywords": [
+		"faker",
+		"fixtures",
+		"data"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mark Zhao"
+		},
+		{
+			"name": "François Zaninotto"
+		}
+	],
+	"require": {
+		"php": "^7.0"
+	},
+	"require-dev": {
+		"ext-intl": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Poppy\\Faker\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Poppy\\Faker\\Test\\": "test/"
+		}
+	},
+	"config": {
+		"sort-packages": true
+	}
+}
