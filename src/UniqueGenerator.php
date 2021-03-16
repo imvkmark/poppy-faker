@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker;
+<?php
+
+namespace Poppy\Faker;
 
 /**
  * Proxy for other generators, to return only unique values. Works with

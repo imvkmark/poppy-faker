@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker\Provider;
+<?php
+
+namespace Poppy\Faker\Provider;
 
 abstract class Text extends Base
 {

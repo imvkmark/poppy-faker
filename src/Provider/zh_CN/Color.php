@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker\Provider\zh_CN;
+<?php
+
+namespace Poppy\Faker\Provider\zh_CN;
 
 class Color extends \Poppy\Faker\Provider\Color
 {

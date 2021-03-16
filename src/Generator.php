@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker;
+<?php
+
+namespace Poppy\Faker;
 
 use DateTime;
 use InvalidArgumentException;

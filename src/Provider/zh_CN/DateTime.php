@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker\Provider\zh_CN;
+<?php
+
+namespace Poppy\Faker\Provider\zh_CN;
 
 class DateTime extends \Poppy\Faker\Provider\DateTime
 {

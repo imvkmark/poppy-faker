@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker\Guesser;
+<?php
+
+namespace Poppy\Faker\Guesser;
 
 use Poppy\Faker\Provider\Base;
 

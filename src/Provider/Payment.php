@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker\Provider;
+<?php
+
+namespace Poppy\Faker\Provider;
 
 use Poppy\Faker\Calculator\Iban;
 use Poppy\Faker\Calculator\Luhn;

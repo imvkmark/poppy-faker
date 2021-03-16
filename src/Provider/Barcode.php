@@ -1,4 +1,6 @@
-<?php namespace Poppy\Faker\Provider;
+<?php
+
+namespace Poppy\Faker\Provider;
 
 /**
  * @see http://en.wikipedia.org/wiki/EAN-13
