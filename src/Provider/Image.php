@@ -25,7 +25,7 @@ class Image extends Base
      * @return string
      * @example 'http://fakeimg.pl/640x480'
      */
-    public static function phUrl($width = 640, $height = 480, $font_color = '282828', $bg_color = 'eae0d0', $word = '', $font = '')
+    public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = '282828', $bg_color = 'eae0d0', $font = ''): string
     {
         $baseUrl = "https://fakeimg.pl/";
         $url     = "{$width}x{$height}/";
@@ -37,10 +37,10 @@ class Image extends Base
         $url .= '?';
 
         if ($word) {
-            $url .= 'word=' . $word;
+            $url .= 'text=' . urlencode($word) . '&';
         }
         if ($font) {
-            $url .= 'font=' . $font;
+            $url .= 'font=' . $font . '&';
         }
 
         return $baseUrl . $url;
