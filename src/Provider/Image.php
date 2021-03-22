@@ -43,7 +43,7 @@ class Image extends Base
             $url .= 'font=' . $font . '&';
         }
 
-        return $baseUrl . $url;
+        return $baseUrl . rtrim($url, '&?');
     }
 
     /**
