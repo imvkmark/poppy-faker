@@ -18,86 +18,43 @@ class Image extends Base
      * https://fakeimg.pl/
      * @param integer     $width
      * @param integer     $height
+     * @param string|null $word
      * @param string      $font_color
      * @param string      $bg_color
-     * @param string|null $word
-     * @param string      $font noto/lobster
+     * @param string      $font_size
      * @return string
-     * @example 'http://fakeimg.pl/640x480'
+     * @example https://jdc.jd.com/img/500x300?color=6190e8&text=poppy&textColor=ffffff
      */
-    public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = '282828', $bg_color = 'eae0d0', $font = ''): string
+    public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = '282828', $bg_color = 'eae0d0', $font_size = ''): string
     {
-        $baseUrl = "https://fakeimg.pl/";
-        $url     = "{$width}x{$height}/";
-
-        if ($font_color) {
-            $url .= "{$font_color}/{$bg_color}";
-        }
+        $baseUrl = "https://jdc.jd.com/img";
+        $url     = "/{$width}x{$height}";
 
         $url .= '?';
+        if ($font_color) {
+            $url .= "textColor={$font_color}&";
+        }
 
         if ($word) {
             $url .= 'text=' . urlencode($word) . '&';
         }
-        if ($font) {
-            $url .= 'font=' . $font . '&';
+
+        if ($bg_color) {
+            $url .= 'color=' . $bg_color . '&';
+        }
+
+        if ($font_size) {
+            $url .= 'fs=' . $font_size . '&';
+        }
+        else {
+            // min: 20 /max 50
+            $size = (($width / 10) <= 14)
+                ? 14
+                : (($width / 10) >= 50 ? 50 : round($width / 10));
+            $url  .= 'fs=' . $size . '&';
         }
 
         return $baseUrl . rtrim($url, '&?');
-    }
-
-    /**
-     * 头像URL
-     * https://pravatar.cc/
-     * @param int    $size
-     * @param string $type
-     * @return string
-     */
-    public static function avatarUrl($size = 300, $type = 'rand')
-    {
-        $baseUrl = "https://i.pravatar.cc/";
-        if ($size > 1000) {
-            $size = 1000;
-        }
-        $url = $size;
-
-        $url .= '?';
-        if ($type === 'girl') {
-            $images = array_merge([1, 5, 9, 10, 16], range(19, 32), range(36, 49));
-        }
-        elseif ($type === 'boy') {
-            $images = array_merge([2, 3, 6, 7, 8, 11, 12, 13, 14, 15, 17, 18, 33], range(50, 70));
-        }
-        else {
-            $images = range(1, 70);
-        }
-        shuffle($images);
-        $url .= 'img=' . current($images);
-        return $baseUrl . $url;
-    }
-
-
-    /**
-     * Svg Url
-     * https://avatars.dicebear.com/
-     * @param int    $width
-     * @param int    $height
-     * @param string $type
-     * @return string
-     */
-    public static function svgUrl($width = 300, $height = 300, $type = 'bottts')
-    {
-        $baseUrl = "https://avatars.dicebear.com/api/";
-        $url     = "$type/" . self::randomNumber(5) . '.svg';
-        $url     .= '?';
-        if ($width) {
-            $url .= "width=" . $width . '&';
-        }
-        if ($height) {
-            $url .= "height=" . $height . '&';
-        }
-        $url = rtrim($url, '&');
-        return $baseUrl . $url;
     }
 
     /**
@@ -126,7 +83,7 @@ class Image extends Base
         $filename = $name . '.jpg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-        $url = static::phUrl($width, $height);
+        $url = static::imageUrl($width, $height);
 
         // save file
         if (function_exists('curl_exec')) {
