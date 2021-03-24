@@ -188,7 +188,7 @@ use InvalidArgumentException;
  * @property string       $fileExtension
  * @method string file($sourceDirectory = '/tmp', $targetDirectory = '/tmp', $fullPath = true)
  *
- * @method string imageUrl($width = 640, $height = 480, $word = '', $font_color = '282828', $bg_color = 'eae0d0', $font = '')
+ * @method string imageUrl($width = 640, $height = 480, $word = '', $font_color = '282828', $bg_color = 'eae0d0', $font_size = '')
  * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
  *
  * @property string       $hexColor
