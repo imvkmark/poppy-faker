@@ -25,7 +25,7 @@ class Image extends Base
      * @return string
      * @example https://jdc.jd.com/img/500x300?color=6190e8&text=poppy&textColor=ffffff
      */
-    public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = '282828', $bg_color = 'eae0d0', $font_size = ''): string
+    public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = 'eae0d0', $bg_color = '282828', $font_size = ''): string
     {
         $baseUrl = "https://jdc.jd.com/img";
         $url     = "/{$width}x{$height}";
@@ -47,10 +47,10 @@ class Image extends Base
             $url .= 'fs=' . $font_size . '&';
         }
         else {
-            // min: 20 /max 50
+            // min: 20 /max 100
             $size = (($width / 10) <= 14)
                 ? 14
-                : (($width / 10) >= 50 ? 50 : round($width / 10));
+                : (($width / 10) >= 100 ? 100 : round($width / 10));
             $url  .= 'fs=' . $size . '&';
         }
 
