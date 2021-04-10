@@ -31,7 +31,7 @@ use InvalidArgumentException;
  * @property string       $address
  * @property string       $state
  * @property string       $country
- * @method  float        latitude($min = -90, $max = 90)
+ * @method  float        latitude($min = -85.05, $max = 85.05)
  * @method  float        longitude($min = -180, $max = 180)
  *
  * @property string       $ean13

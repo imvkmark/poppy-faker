@@ -104,12 +104,13 @@ class Address extends Base
     }
 
     /**
+     * 经纬度范围由于采取的数据是有限的,这里需要给予限制
      * @param float|int $min
      * @param float|int $max
      * @return float Uses signed degrees format (returns a float number between -90 and 90)
      * @example '77.147489'
      */
-    public static function latitude($min = -90, $max = 90)
+    public static function latitude($min = -85.05, $max = 85.05): float
     {
         return static::randomFloat(6, $min, $max);
     }
