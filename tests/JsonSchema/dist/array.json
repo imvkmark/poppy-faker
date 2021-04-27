@@ -1,0 +1,35 @@
+{
+    "typeOnly": [
+        {}
+    ],
+    "typeAndMinItems": [
+        [],
+        [
+            null
+        ],
+        [
+            null
+        ],
+        [],
+        [],
+        [],
+        [],
+        [
+            "Ut."
+        ],
+        [
+            null
+        ],
+        [
+            null
+        ]
+    ],
+    "typeAndMaxItems": [
+        null,
+        null,
+        null,
+        null
+    ],
+    "typeAndMultipleItems": [],
+    "$schema": "http://example.com/schema/array.json"
+}

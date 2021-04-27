@@ -41,8 +41,8 @@ final class Faker
      * Create fake data with JSON schema
      *
      * @param SplFileInfo|stdClass $schema       Data structure written in JSON Schema
-     * @param stdClass             $parentSchema parent schema when it is subschema
-     * @param string               $schemaDir    forced directory in object loop
+     * @param stdClass|null        $parentSchema parent schema when it is subschema
+     * @param string|null          $schemaDir    forced directory in object loop
      *
      * @throws UnsupportedTypeException Throw when unsupported type specified
      */

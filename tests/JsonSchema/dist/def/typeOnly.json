@@ -1,0 +1,6 @@
+{
+    "typeOnly": [
+        {}
+    ],
+    "$schema": "http://example.com/schema/typeOnly.json"
+}

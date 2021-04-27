@@ -1,0 +1,41 @@
+{
+    "typeOnly": {},
+    "typeAndAdditionalPropertiesFalse": {},
+    "typeAndAdditionalPropertiesTrue": {},
+    "typeAndPatternPropertiesAndAdditionalPropertiesFalse": {},
+    "typeAndPatternPropertiesAndAdditionalPropertiesTrue": {},
+    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject": {
+        "builtin": -1331105381
+    },
+    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinProperties": {
+        "builtin": -1619518859,
+        "accusamus": "Eos.",
+        "dolorem": "Ea."
+    },
+    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinPropertiesAndRequied": {
+        "builtin": 1670420331,
+        "voluptates": "Et.",
+        "ad": "Quia."
+    },
+    "deepNested": {
+        "first": {
+            "second": {
+                "third": {}
+            }
+        }
+    },
+    "typeAndMinProperties": {
+        "est": "Sed.",
+        "veniam": -96856637,
+        "corporis": [
+            "Ea."
+        ],
+        "minima": [
+            215542089
+        ],
+        "a": [
+            982095137
+        ]
+    },
+    "$schema": "http://example.com/schema/object.json"
+}

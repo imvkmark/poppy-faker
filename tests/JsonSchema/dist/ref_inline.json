@@ -1,0 +1,23 @@
+{
+    "typeOnly": [],
+    "typeAndMinItems": [
+        -1090785128,
+        624910870,
+        -1091844666,
+        -929798307,
+        1869210442,
+        1480633201,
+        -665546614,
+        93127977,
+        -272669779,
+        1978793081
+    ],
+    "typeAndMaxItems": [
+        -1141915279,
+        -1495006583
+    ],
+    "typeAndMultipleItems": [
+        -1209091240
+    ],
+    "$schema": "http://example.com/schema/ref_inline.json"
+}

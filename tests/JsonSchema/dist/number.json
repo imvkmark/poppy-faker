@@ -1,0 +1,10 @@
+{
+    "typeOnly": -951723389,
+    "typeAndEnum": -10,
+    "typeAndMinimum": 407848965.1899195,
+    "typeAndExcludeMinimum": -1282792819.7920408,
+    "typeAndMaximum": -1943971628.7,
+    "typeAndMinimumAndMaximum": 74.9817543,
+    "typeAndMultipleOf": -2641559649,
+    "$schema": "http://example.com/schema/number.json"
+}

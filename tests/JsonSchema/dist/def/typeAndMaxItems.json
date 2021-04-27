@@ -1,0 +1,15 @@
+{
+    "typeAndMaxItems": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+    ],
+    "$schema": "http://example.com/schema/typeAndMaxItems.json"
+}

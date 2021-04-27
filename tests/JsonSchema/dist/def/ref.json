@@ -1,0 +1,6 @@
+{
+    "prop1": {
+        "typeOnly": []
+    },
+    "$schema": "http://example.com/schema/ref.json"
+}

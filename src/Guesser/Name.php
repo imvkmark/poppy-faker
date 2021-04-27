@@ -2,6 +2,7 @@
 
 namespace Poppy\Faker\Guesser;
 
+use Poppy\Faker\Generator;
 use Poppy\Faker\Provider\Base;
 
 class Name
@@ -9,9 +10,9 @@ class Name
     protected $generator;
 
     /**
-     * @param \Poppy\Faker\Generator $generator
+     * @param Generator $generator
      */
-    public function __construct(\Poppy\Faker\Generator $generator)
+    public function __construct(Generator $generator)
     {
         $this->generator = $generator;
     }

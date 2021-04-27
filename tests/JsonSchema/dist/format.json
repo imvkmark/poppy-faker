@@ -1,0 +1,9 @@
+{
+    "date-time": "1991-06-12T20:22:42+00:00",
+    "email": "albertha.volkman@example.com",
+    "hostname": "bergstrom.info",
+    "ipv4": "5.240.195.106",
+    "ipv6": "7daf:d281:1f5e:9136:4030:9ef2:4e33:6c05",
+    "uri": "http://hauck.com/",
+    "$schema": "http://example.com/schema/format.json"
+}

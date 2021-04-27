@@ -254,7 +254,6 @@ class Generator
                 return $this->formatters[$formatter];
             }
         }
-        var_dump($formatter);
         throw new InvalidArgumentException(sprintf('Unknown formatter "%s"', $formatter));
     }
 

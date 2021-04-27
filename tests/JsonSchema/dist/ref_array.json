@@ -1,0 +1,24 @@
+{
+    "typeArrayRef": [
+        {
+            "prop1": {
+                "typeOnly": []
+            }
+        },
+        {
+            "prop1": {
+                "typeOnly": [
+                    "Eum."
+                ]
+            }
+        },
+        {
+            "prop1": {
+                "typeOnly": [
+                    "Enim."
+                ]
+            }
+        }
+    ],
+    "$schema": "http://example.com/schema/ref_array.json"
+}
