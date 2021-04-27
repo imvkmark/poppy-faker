@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": [
+    "typeOnly",
+    "typeAndMinItems"
+  ],
+  "properties": {
+    "typeOnly": {
+      "$ref": "./def/typeOnly.json"
+    },
+    "typeAndMaxItems": {
+      "$ref": "./def/typeAndMaxItems.json"
+    }
+  }
+}

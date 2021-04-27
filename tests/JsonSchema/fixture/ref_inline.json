@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "required": [
+    "typeOnly",
+    "typeAndMinItems",
+    "typeAndMaxItems",
+    "typeAndMinItems",
+    "typeAndMultipleItems"
+  ],
+  "properties": {
+    "typeOnly": {
+      "$ref": "#/definitions/typeOnly"
+    },
+    "typeAndMaxItems": {
+      "$ref": "#/definitions/typeAndMaxItems"
+    },
+    "typeAndMinItems": {
+      "$ref": "#/definitions/typeAndMinItems"
+    },
+    "typeAndMultipleItems": {
+      "$ref": "#/definitions/typeAndMultipleItems"
+    }
+  },
+  "definitions": {
+    "typeOnly": {
+      "type": "array"
+    },
+    "typeAndMaxItems": {
+      "type": "array",
+      "maxItems": 10
+    },
+    "typeAndMinItems": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "typeAndMultipleItems": {
+      "type": "array",
+      "items": [{
+        "type": "integer"
+      }, {
+        "type": "string"
+      }]
+    }
+  }
+}

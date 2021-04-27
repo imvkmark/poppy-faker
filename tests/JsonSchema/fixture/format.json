@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": [
+    "date-time",
+    "email",
+    "hostname",
+    "ipv4",
+    "ipv6",
+    "uri"
+  ],
+  "properties": {
+    "date-time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "hostname": {
+      "type": "string",
+      "format": "hostname"
+    },
+    "ipv4": {
+      "type": "string",
+      "format": "ipv4"
+    },
+    "ipv6": {
+      "type": "string",
+      "format": "ipv6"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

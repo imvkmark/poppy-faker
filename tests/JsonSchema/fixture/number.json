@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "required": [
+    "typeOnly",
+    "typeAndEnum",
+    "typeAndMinimum",
+    "typeAndExcludeMinimum",
+    "typeAndMaximum",
+    "typeAndExcludeMinimum",
+    "typeAndMinimumAndMaximum",
+    "typeAndMultipleOf"
+  ],
+  "properties": {
+    "typeOnly": {
+      "type": "number"
+    },
+    "typeAndEnum": {
+      "type": "number",
+      "enum": [-10.0, 3.91, 2.1, -0.1]
+    },
+    "typeAndMinimum": {
+      "type": "number",
+      "minimum": -1
+    },
+    "typeAndExcludeMinimum": {
+      "type": "number",
+      "minimum": -1,
+      "exclusiveMinimum": true
+    },
+    "typeAndMaximum": {
+      "type": "number",
+      "maximum": 3
+    },
+    "typeAndExcludeMinimum": {
+      "type": "number",
+      "maximum": 3,
+      "excludeMinimum": true
+    },
+    "typeAndMinimumAndMaximum": {
+      "type": "number",
+      "minimum": -301.0210,
+      "maximum": 312
+    },
+    "typeAndMultipleOf": {
+      "type": "number",
+      "multipleOf": 3
+    }
+  }
+}

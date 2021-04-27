@@ -1,0 +1,9 @@
+{
+  "definitions": {
+    "resource": {
+      "type": "string"
+    }
+  },
+  "$ref": "#/definitions/resource",
+  "required": [""]
+}

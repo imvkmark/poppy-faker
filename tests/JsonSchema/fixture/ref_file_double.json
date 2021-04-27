@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": [
+    "bool",
+    "null"
+  ],
+  "properties": {
+    "bool": {
+      "$ref": "./def/boolean.json"
+    },
+    "null": {
+      "$ref": "./def/null.json"
+    }
+  }
+}
