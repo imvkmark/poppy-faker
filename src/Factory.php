@@ -22,7 +22,7 @@ class Factory
      */
     public static function create($locale = self::DEFAULT_LOCALE)
     {
-        $generator = new \Faker\Generator();
+        $generator = new \Poppy\Faker\Generator();
         foreach (static::$defaultProviders as $provider) {
             $providerClassName = self::getProviderClassname($provider, $locale);
             $generator->addProvider(new $providerClassName($generator));

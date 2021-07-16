@@ -43,6 +43,8 @@ http://127.0.0.1:8000/?md    # 返回 Markdown 格式数据
 
 ```php
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
 // use the factory to create a \Poppy\Faker\Generator instance
 $faker = \Poppy\Faker\Factory::create('zh_CN');
 
