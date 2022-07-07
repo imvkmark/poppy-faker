@@ -19,6 +19,7 @@ function py_faker_desc($desc, $code, $maxLength = 50, $simple = true)
 		echo '// ' . $desc . PHP_EOL . $code . ' // ' . $content . PHP_EOL;
 	}
 	else {
+        $content = htmlentities($content);
 		echo "<pre style='border-bottom: 1px solid #EFEFEF;line-height: 1.4;font-size: 13px;padding-bottom: 8px;'>
 {$desc}{$codeHl}{$content}</pre>";
 	}
@@ -225,9 +226,7 @@ py_example('File', [
 
 
 py_example('Image', [
-	['随机生成图片地址', '$faker->phUrl($width = 640, $height = 480);'],
-	['随机生成头像地址', '$faker->avatarUrl(300, \'girl\');'],
-	['返回 Svg Url 地址', '$faker->svgUrl(100, 100)'],
+	['随机生成图片地址', '$faker->imageUrl($width = 640, $height = 480);'],
 ], $md);
 
 
