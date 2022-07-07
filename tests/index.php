@@ -225,9 +225,7 @@ py_example('File', [
 
 
 py_example('Image', [
-	['随机生成图片地址', '$faker->phUrl($width = 640, $height = 480);'],
-	['随机生成头像地址', '$faker->avatarUrl(300, \'girl\');'],
-	['返回 Svg Url 地址', '$faker->svgUrl(100, 100)'],
+	['随机生成图片地址', '$faker->imageUrl($width = 640, $height = 480);'],
 ], $md);
 
 
