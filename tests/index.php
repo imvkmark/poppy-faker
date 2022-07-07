@@ -19,6 +19,7 @@ function py_faker_desc($desc, $code, $maxLength = 50, $simple = true)
 		echo '// ' . $desc . PHP_EOL . $code . ' // ' . $content . PHP_EOL;
 	}
 	else {
+        $content = htmlentities($content);
 		echo "<pre style='border-bottom: 1px solid #EFEFEF;line-height: 1.4;font-size: 13px;padding-bottom: 8px;'>
 {$desc}{$codeHl}{$content}</pre>";
 	}
