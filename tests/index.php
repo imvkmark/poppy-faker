@@ -14,7 +14,7 @@ function py_faker_desc($desc, $code, $maxLength = 50, $simple = true)
 	print_r($result);
 	$content = ob_get_clean();
 	$codeHl  = highlight_string($code, true);
-	$code    = str_pad($code, $maxLength + 3, ' ', STR_PAD_RIGHT);
+	$code    = str_pad($code, $maxLength + 3);
 	if ($simple) {
 		echo '// ' . $desc . PHP_EOL . $code . ' // ' . $content . PHP_EOL;
 	}
