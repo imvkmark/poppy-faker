@@ -18,11 +18,11 @@ class Factory
      * Create a new generator
      *
      * @param string $locale
-     * @return \Faker\Generator
+     * @return Generator
      */
     public static function create($locale = self::DEFAULT_LOCALE)
     {
-        $generator = new \Faker\Generator();
+        $generator = new Generator();
         foreach (static::$defaultProviders as $provider) {
             $providerClassName = self::getProviderClassname($provider, $locale);
             $generator->addProvider(new $providerClassName($generator));
@@ -60,7 +60,7 @@ class Factory
     protected static function findProviderClassname($provider, $locale = '')
     {
         $providerClass = 'Poppy\\Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
-        if (class_exists($providerClass, true)) {
+        if (class_exists($providerClass)) {
             return $providerClass;
         }
     }
