@@ -9,12 +9,14 @@ namespace Poppy\Faker;
 class UniqueGenerator
 {
     protected $generator;
+
     protected $maxRetries;
+
     protected $uniques = [];
 
     /**
      * @param Generator $generator
-     * @param integer   $maxRetries
+     * @param integer $maxRetries
      */
     public function __construct(Generator $generator, $maxRetries = 10000)
     {
@@ -35,7 +37,7 @@ class UniqueGenerator
     /**
      * Catch and proxy all generator calls with arguments but return only unique values
      * @param string $name
-     * @param array  $arguments
+     * @param array $arguments
      * @return mixed
      */
     public function __call($name, $arguments)
