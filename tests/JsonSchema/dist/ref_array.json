@@ -2,21 +2,14 @@
     "typeArrayRef": [
         {
             "prop1": {
+                "typeOnly": [
+                    false
+                ]
+            }
+        },
+        {
+            "prop1": {
                 "typeOnly": []
-            }
-        },
-        {
-            "prop1": {
-                "typeOnly": [
-                    "Eum."
-                ]
-            }
-        },
-        {
-            "prop1": {
-                "typeOnly": [
-                    "Enim."
-                ]
             }
         }
     ],

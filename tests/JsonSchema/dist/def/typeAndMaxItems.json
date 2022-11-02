@@ -1,15 +1,10 @@
 {
     "typeAndMaxItems": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        563979603,
+        -229797519,
+        -181507131,
+        953230647,
+        1762911955
     ],
     "$schema": "http://example.com/schema/typeAndMaxItems.json"
 }

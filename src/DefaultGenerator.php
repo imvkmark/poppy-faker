@@ -4,7 +4,7 @@ namespace Poppy\Faker;
 
 /**
  * This generator returns a default value for all called properties
- * and methods. It works with Faker\Generator\Base->optional().
+ * and methods. It works with Poppy\Faker\Generator\Base->optional().
  */
 class DefaultGenerator
 {

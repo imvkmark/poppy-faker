@@ -8,7 +8,7 @@ class Factory
 {
     const DEFAULT_LOCALE = 'en_US';
 
-    protected static $defaultProviders = [
+    protected static array $defaultProviders = [
         'Address', 'Barcode', 'Biased', 'Color', 'Company',
         'DateTime', 'File', 'HtmlLorem', 'Image', 'Internet', 'Lorem', 'Miscellaneous',
         'Payment', 'Person', 'PhoneNumber', 'Text', 'UserAgent', 'Uuid',

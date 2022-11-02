@@ -2,6 +2,8 @@
 
 namespace Poppy\Faker\Provider;
 
+use DOMDocument;
+use DOMElement;
 use Poppy\Faker\Generator;
 use Poppy\Faker\UniqueGenerator;
 
@@ -48,7 +50,7 @@ class HtmlLorem extends Base
      */
     public function randomHtml($maxDepth = 4, $maxWidth = 4)
     {
-        $document          = new \DOMDocument();
+        $document          = new DOMDocument();
         $this->idGenerator = new UniqueGenerator($this->generator);
 
         $head = $document->createElement("head");
@@ -66,7 +68,7 @@ class HtmlLorem extends Base
         return $document->saveHTML();
     }
 
-    private function addRandomSubTree(\DOMElement $root, $maxDepth, $maxWidth)
+    private function addRandomSubTree(DOMElement $root, $maxDepth, $maxWidth)
     {
         $maxDepth--;
         if ($maxDepth <= 0) {
@@ -88,7 +90,7 @@ class HtmlLorem extends Base
         return $root;
     }
 
-    private function addRandomLeaf(\DOMElement $node)
+    private function addRandomLeaf(DOMElement $node)
     {
         $rand = mt_rand(1, 10);
         switch ($rand) {
@@ -122,7 +124,7 @@ class HtmlLorem extends Base
         }
     }
 
-    private function addRandomAttribute(\DOMElement $node)
+    private function addRandomAttribute(DOMElement $node)
     {
         $rand = mt_rand(1, 2);
         switch ($rand) {
@@ -135,7 +137,7 @@ class HtmlLorem extends Base
         }
     }
 
-    private function addRandomP(\DOMElement $element, $maxLength = 10)
+    private function addRandomP(DOMElement $element, $maxLength = 10)
     {
 
         $node              = $element->ownerDocument->createElement(static::P_TAG);
@@ -143,13 +145,13 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addRandomText(\DOMElement $element, $maxLength = 10)
+    private function addRandomText(DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $element->appendChild($text);
     }
 
-    private function addRandomA(\DOMElement $element, $maxLength = 10)
+    private function addRandomA(DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::A_TAG);
@@ -158,7 +160,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addRandomTitle(\DOMElement $element, $maxLength = 10)
+    private function addRandomTitle(DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::TITLE_TAG);
@@ -166,7 +168,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addRandomH(\DOMElement $element, $maxLength = 10)
+    private function addRandomH(DOMElement $element, $maxLength = 10)
     {
         $h    = static::H_TAG . (string) mt_rand(1, 3);
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
@@ -175,7 +177,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addRandomB(\DOMElement $element, $maxLength = 10)
+    private function addRandomB(DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::B_TAG);
@@ -183,7 +185,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addRandomI(\DOMElement $element, $maxLength = 10)
+    private function addRandomI(DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::I_TAG);
@@ -191,7 +193,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addRandomSpan(\DOMElement $element, $maxLength = 10)
+    private function addRandomSpan(DOMElement $element, $maxLength = 10)
     {
         $text = $element->ownerDocument->createTextNode($this->generator->sentence(mt_rand(1, $maxLength)));
         $node = $element->ownerDocument->createElement(static::SPAN_TAG);
@@ -199,7 +201,7 @@ class HtmlLorem extends Base
         $element->appendChild($node);
     }
 
-    private function addLoginForm(\DOMElement $element)
+    private function addLoginForm(DOMElement $element)
     {
 
         $textInput = $element->ownerDocument->createElement(static::INPUT_TAG);
@@ -232,7 +234,7 @@ class HtmlLorem extends Base
         $element->appendChild($submit);
     }
 
-    private function addRandomTable(\DOMElement $element, $maxRows = 10, $maxCols = 6, $maxTitle = 4, $maxLength = 10)
+    private function addRandomTable(DOMElement $element, $maxRows = 10, $maxCols = 6, $maxTitle = 4, $maxLength = 10)
     {
         $rows = mt_rand(1, $maxRows);
         $cols = mt_rand(1, $maxCols);
@@ -263,7 +265,7 @@ class HtmlLorem extends Base
         $element->appendChild($table);
     }
 
-    private function addRandomUL(\DOMElement $element, $maxItems = 11, $maxLength = 4)
+    private function addRandomUL(DOMElement $element, $maxItems = 11, $maxLength = 4)
     {
         $num = mt_rand(1, $maxItems);
         $ul  = $element->ownerDocument->createElement(static::UL_TAG);

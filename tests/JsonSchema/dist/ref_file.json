@@ -1,9 +1,9 @@
 {
     "typeOnly": {
         "typeOnly": [
-            1257545783
+            494883729
         ]
     },
-    "typeAndMinItems": {},
+    "typeAndMinItems": 634719714,
     "$schema": "http://example.com/schema/ref_file.json"
 }

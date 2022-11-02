@@ -1,30 +1,25 @@
 {
     "typeOnly": [
-        {}
+        null
     ],
     "typeAndMinItems": [
-        [],
-        [
-            null
-        ],
-        [
-            null
-        ],
-        [],
-        [],
-        [],
-        [],
-        [
-            "Ut."
-        ],
-        [
-            null
-        ],
-        [
-            null
-        ]
+        "Ut.",
+        "Odio.",
+        "Quas.",
+        "Est.",
+        "Sed.",
+        "Et.",
+        "Id.",
+        "Unde.",
+        "Aut.",
+        "Nemo."
     ],
     "typeAndMaxItems": [
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,

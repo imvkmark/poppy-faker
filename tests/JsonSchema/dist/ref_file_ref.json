@@ -1,9 +1,7 @@
 {
     "typeOnly": {
         "prop1": {
-            "typeOnly": [
-                -938209865
-            ]
+            "typeOnly": []
         }
     },
     "$schema": "http://example.com/schema/ref_file_ref.json"
