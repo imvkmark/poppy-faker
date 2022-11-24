@@ -4,20 +4,23 @@ namespace Poppy\Faker\Provider;
 
 class Internet extends Base
 {
-    protected static $freeEmailDomain = ['gmail.com', 'yahoo.com', 'hotmail.com'];
-    protected static $tld             = ['com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org'];
+    protected static array $freeEmailDomain = ['gmail.com', 'yahoo.com', 'hotmail.com'];
 
-    protected static $userNameFormats = [
+    protected static array $tld = ['com', 'com', 'com', 'com', 'com', 'com', 'biz', 'info', 'net', 'org'];
+
+    protected static array $userNameFormats = [
         '{{lastName}}.{{firstName}}',
         '{{firstName}}.{{lastName}}',
         '{{firstName}}##',
         '?{{lastName}}',
     ];
-    protected static $emailFormats    = [
+
+    protected static array $emailFormats = [
         '{{userName}}@{{domainName}}',
         '{{userName}}@{{freeEmailDomain}}',
     ];
-    protected static $urlFormats      = [
+
+    protected static array $urlFormats = [
         'http://www.{{domainName}}/',
         'http://{{domainName}}/',
         'http://www.{{domainName}}/{{slug}}',
@@ -157,10 +160,9 @@ class Internet extends Base
     /**
      * @example 'http://www.runolfsdottir.com/'
      */
-    public function url()
+    public function url(): string
     {
         $format = static::randomElement(static::$urlFormats);
-
         return $this->generator->parse($format);
     }
 

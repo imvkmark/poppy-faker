@@ -54,13 +54,7 @@ class Lorem extends \Poppy\Faker\Provider\Lorem
     ];
 
     /**
-     * Generate a random sentence
-     *
-     * @param integer $nbWords          around how many words the sentence should contain
-     * @param boolean $variableNbWords  set to false if you want exactly $nbWords returned,
-     *                                  otherwise $nbWords may vary by +/-40% with a minimum of 1
-     * @return string
-     * @example 'Lorem ipsum dolor sit amet.'
+     * @inheritDoc
      */
     public static function sentence($nbWords = 6, $variableNbWords = true)
     {
@@ -74,5 +68,14 @@ class Lorem extends \Poppy\Faker\Provider\Lorem
         $words = static::words($nbWords);
 
         return implode('', $words) . '.';
+    }
+
+    /**
+     * @inerhitDoc
+     */
+    public static function words($nb = 3, $asText = false)
+    {
+        $words = parent::words($nb);
+        return $asText ? implode('', $words) : $words;
     }
 }

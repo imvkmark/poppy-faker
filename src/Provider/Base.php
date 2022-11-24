@@ -2,6 +2,8 @@
 
 namespace Poppy\Faker\Provider;
 
+use Closure;
+use Countable;
 use InvalidArgumentException;
 use LengthException;
 use OverflowException;
@@ -96,8 +98,8 @@ class Base
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>
      *
-     * @param \Closure $validator  A function returning true for valid values
-     * @param integer  $maxRetries Maximum number of retries to find a unique value,
+     * @param Closure $validator   A function returning true for valid values
+     * @param integer $maxRetries  Maximum number of retries to find a unique value,
      *                             After which an OverflowException is thrown.
      * @return ValidGenerator A proxy class returning only valid values
      * @throws OverflowException When no valid value can be found by iterating $maxRetries times
@@ -304,12 +306,12 @@ class Base
     /**
      * Returns a random element from a passed array
      *
-     * @param array $array
+     * @param array|Countable $array
      * @return mixed
      */
     public static function randomElement($array = ['a', 'b', 'c'])
     {
-        if (!$array || ($array instanceof Traversable && !count($array))) {
+        if (!$array || ($array instanceof Countable && !count($array))) {
             return null;
         }
         $elements = static::randomElements($array, 1);
