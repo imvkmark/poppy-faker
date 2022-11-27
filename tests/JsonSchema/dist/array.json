@@ -1,30 +1,24 @@
 {
-    "typeOnly": [
-        null
-    ],
+    "typeOnly": [],
     "typeAndMinItems": [
-        "Ut.",
-        "Odio.",
-        "Quas.",
-        "Est.",
-        "Sed.",
-        "Et.",
-        "Id.",
-        "Unde.",
-        "Aut.",
-        "Nemo."
+        -488164985,
+        -1611838539,
+        1141281679,
+        -973805867,
+        1306964537,
+        -1349410719,
+        1009496123,
+        -2106731145,
+        412470057,
+        1248705759
     ],
     "typeAndMaxItems": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        -459395087,
+        1735955127,
+        1834951619
     ],
-    "typeAndMultipleItems": [],
+    "typeAndMultipleItems": [
+        -246259623
+    ],
     "$schema": "http://example.com/schema/array.json"
 }

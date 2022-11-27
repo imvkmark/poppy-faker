@@ -4,7 +4,7 @@ namespace Poppy\Faker\Provider\zh_CN;
 
 class Company extends \Poppy\Faker\Provider\Company
 {
-    protected static $formats = [
+    protected static array $formats = [
         '{{companyPrefix}}{{companySuffix}}',
     ];
 
@@ -28,7 +28,7 @@ class Company extends \Poppy\Faker\Provider\Company
         '维涛', '通际名联',
     ];
 
-    protected static $companySuffix = ['科技', '网络', '信息', '传媒'];
+    protected static array $companySuffix = ['科技', '网络', '信息', '传媒'];
 
     /**
      * @see blog.renren.com/share/223844062/2387611567

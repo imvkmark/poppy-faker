@@ -7,7 +7,7 @@ class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
     /**
      * @see https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers#United_States.2C_Canada.2C_and_other_NANP_countries
      */
-    protected static $formats = [
+    protected static array $formats = [
         // International format
         '+1-{{areaCode}}-{{exchangeCode}}-####',
         '+1 ({{areaCode}}) {{exchangeCode}}-####',
@@ -49,7 +49,8 @@ class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
     protected static $tollFreeAreaCodes = [
         800, 844, 855, 866, 877, 888,
     ];
-    protected static $tollFreeFormats   = [
+
+    protected static $tollFreeFormats = [
         // Standard formats
         '{{tollFreeAreaCode}}-{{exchangeCode}}-####',
         '({{tollFreeAreaCode}}) {{exchangeCode}}-####',

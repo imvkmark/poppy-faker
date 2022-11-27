@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace Poppy\Faker\Tests\JsonSchema;
 
@@ -14,6 +14,11 @@ class FakeJsonsTest extends TestCase
      */
     protected FakeJsons $fakeJsons;
 
+    protected function setUp(): void
+    {
+        $this->fakeJsons = new FakeJsons();
+    }
+
     public function testInvoke(): void
     {
         ($this->fakeJsons)(__DIR__ . '/fixture', __DIR__ . '/dist', 'http://example.com/schema');
@@ -24,11 +29,6 @@ class FakeJsonsTest extends TestCase
             fwrite(STDOUT, sprintf("[%s] %s\n", $error['property'], $error['message']));
         }
         $this->assertTrue($validator->isValid());
-    }
-
-    protected function setUp(): void
-    {
-        $this->fakeJsons = new FakeJsons();
     }
 
 

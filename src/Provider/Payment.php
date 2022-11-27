@@ -7,9 +7,9 @@ use Poppy\Faker\Calculator\Luhn;
 
 class Payment extends Base
 {
-    public static $expirationDateFormat = "m/y";
+    public static string $expirationDateFormat = "m/y";
 
-    protected static $cardVendors = [
+    protected static array $cardVendors = [
         'Visa', 'Visa', 'Visa', 'Visa', 'Visa',
         'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard', 'MasterCard',
         'American Express', 'Discover Card', 'Visa Retired',
@@ -20,7 +20,7 @@ class Payment extends Base
      * @see https://en.wikipedia.org/wiki/Payment_card_number Reference for existing prefixes
      * @see https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html MasterCard 2017 2-Series BIN Expansion
      */
-    protected static $cardParams = [
+    protected static array $cardParams = [
         'Visa'             => [
             "4539###########",
             "4556###########",

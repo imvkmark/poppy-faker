@@ -1,67 +1,70 @@
 {
-  "type": "object",
-  "required": [
-    "typeOnly",
-    "typeAndEnum",
-    "typeAndMaxLength",
-    "typeAndMinLength",
-    "typeAndMinLengthAndMaxLength",
-    "typeAndPattern",
-    "typeAndFormat(date-time)",
-    "typeAndFormat(email)",
-    "typeAndFormat(hostname)",
-    "typeAndFormat(ipv4)",
-    "typeAndFormat(ipv6)",
-    "typeAndFormat(uri)"
-  ],
-  "properties": {
-    "typeOnly": {
-      "type": "string"
-    },
-    "typeAndEnum": {
-      "type": "string",
-      "enum": ["aaa", "xabc1290あ_!#"]
-    },
-    "typeAndMaxLength": {
-      "type": "string",
-      "maxLength": 132
-    },
-    "typeAndMinLength": {
-      "type": "string",
-      "minLength": 132
-    },
-    "typeAndMinLengthAndMaxLength": {
-      "type": "string",
-      "minLength": 132,
-      "maxLength": 13218
-    },
-    "typeAndPattern": {
-      "type": "string",
-      "pattern": "^[0-9]{3}-[0-9]{4}$"
-    },
-    "typeAndFormat(date-time)": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "typeAndFormat(email)": {
-      "type": "string",
-      "format": "email"
-    },
-    "typeAndFormat(hostname)": {
-      "type": "string",
-      "format": "hostname"
-    },
-    "typeAndFormat(ipv4)": {
-      "type": "string",
-      "format": "ipv4"
-    },
-    "typeAndFormat(ipv6)": {
-      "type": "string",
-      "format": "ipv6"
-    },
-    "typeAndFormat(uri)": {
-      "type": "string",
-      "format": "uri"
+    "type": "object",
+    "required": [
+        "typeOnly",
+        "typeAndEnum",
+        "typeAndMaxLength",
+        "typeAndMinLength",
+        "typeAndMinLengthAndMaxLength",
+        "typeAndPattern",
+        "typeAndFormat(date-time)",
+        "typeAndFormat(email)",
+        "typeAndFormat(hostname)",
+        "typeAndFormat(ipv4)",
+        "typeAndFormat(ipv6)",
+        "typeAndFormat(uri)"
+    ],
+    "properties": {
+        "typeOnly": {
+            "type": "string"
+        },
+        "typeAndEnum": {
+            "type": "string",
+            "enum": [
+                "aaa",
+                "xabc1290あ_!#"
+            ]
+        },
+        "typeAndMaxLength": {
+            "type": "string",
+            "maxLength": 132
+        },
+        "typeAndMinLength": {
+            "type": "string",
+            "minLength": 132
+        },
+        "typeAndMinLengthAndMaxLength": {
+            "type": "string",
+            "minLength": 132,
+            "maxLength": 13218
+        },
+        "typeAndPattern": {
+            "type": "string",
+            "pattern": "^[0-9]{3}-[0-9]{4}$"
+        },
+        "typeAndFormat(date-time)": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "typeAndFormat(email)": {
+            "type": "string",
+            "format": "email"
+        },
+        "typeAndFormat(hostname)": {
+            "type": "string",
+            "format": "hostname"
+        },
+        "typeAndFormat(ipv4)": {
+            "type": "string",
+            "format": "ipv4"
+        },
+        "typeAndFormat(ipv6)": {
+            "type": "string",
+            "format": "ipv6"
+        },
+        "typeAndFormat(uri)": {
+            "type": "string",
+            "format": "uri"
+        }
     }
-  }
 }

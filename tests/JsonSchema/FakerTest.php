@@ -46,7 +46,7 @@ class FakerTest extends TestCase
         (new Faker)->generate(null);
     }
 
-    public function getTypes()
+    public function getTypes(): array
     {
         return [
             ['boolean'],
@@ -61,7 +61,7 @@ class FakerTest extends TestCase
         ];
     }
 
-    public function getTypesAndFile()
+    public function getTypesAndFile(): array
     {
         return [
             ['boolean'],

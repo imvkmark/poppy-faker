@@ -14,7 +14,7 @@ class Image extends Base
     /**
      * Generate the URL that will return a random image
      *
-     * Set randomize to false to remove the random GET parameter at the end of the url.
+     * Set randomize too false to remove the random GET parameter at the end of the url.
      * https://fakeimg.pl/
      * @param integer     $width
      * @param integer     $height

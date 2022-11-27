@@ -10,7 +10,7 @@ class Miscellaneous extends Base
      *
      * U+1F600 - U+1F637 as their UTF-8 Pairings
      */
-    protected static $emoji = [
+    protected static array $emoji = [
         '\uD83D\uDE00', '\uD83D\uDE01', '\uD83D\uDE02', '\uD83D\uDE03',
         '\uD83D\uDE04', '\uD83D\uDE05', '\uD83D\uDE06', '\uD83D\uDE07',
         '\uD83D\uDE08', '\uD83D\uDE09', '\uD83D\uDE0A', '\uD83D\uDE0B',
@@ -31,7 +31,7 @@ class Miscellaneous extends Base
      * @link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
      * On date of 2016-04-22
      */
-    protected static $languageCode = [
+    protected static array $languageCode = [
         'aa', 'ab', 'ae', 'af', 'ak', 'am', 'an', 'ar', 'as', 'av',
         'ay', 'az', 'ba', 'be', 'bg', 'bh', 'bi', 'bm', 'bn', 'bo',
         'br', 'bs', 'ca', 'ce', 'ch', 'co', 'cr', 'cs', 'cu', 'cv',
@@ -57,7 +57,7 @@ class Miscellaneous extends Base
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
      * On date of 2014-10-19
      */
-    protected static $countryCode = [
+    protected static array $countryCode = [
         'AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR',
         'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE',
         'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ',
@@ -89,7 +89,7 @@ class Miscellaneous extends Base
      * @link https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
      * On date of 2014-10-19
      */
-    protected static $countryISOAlpha3 = [
+    protected static array $countryISOAlpha3 = [
         'ABW', 'AFG', 'AGO', 'AIA', 'ALA', 'ALB', 'AND', 'ARE', 'ARG', 'ARM',
         'ASM', 'ATA', 'ATF', 'ATG', 'AUS', 'AUT', 'AZE', 'BDI', 'BEL', 'BEN',
         'BES', 'BFA', 'BGD', 'BGR', 'BHR', 'BHS', 'BIH', 'BLM', 'BLR', 'BLZ',
@@ -117,7 +117,7 @@ class Miscellaneous extends Base
         'VIR', 'VNM', 'VUT', 'WLF', 'WSM', 'YEM', 'ZAF', 'ZMB', 'ZWE',
     ];
 
-    protected static $localeData = [
+    protected static array $localeData = [
         'aa_DJ', 'aa_ER', 'aa_ET',
         'af_NA', 'af_ZA', 'ak_GH',
         'am_ET', 'ar_AE', 'ar_BH', 'ar_DZ',
@@ -208,7 +208,7 @@ class Miscellaneous extends Base
      * SVC has been replaced by the USD in 2001: https://en.wikipedia.org/wiki/Salvadoran_col%C3%B3n
      * ZWL has been suspended since 2009: https://en.wikipedia.org/wiki/Zimbabwean_dollar
      */
-    protected static $currencyCode = [
+    protected static array $currencyCode = [
         'AED', 'AFN', 'ALL', 'AMD', 'ANG', 'AOA', 'ARS', 'AUD', 'AWG', 'AZN',
         'BAM', 'BBD', 'BDT', 'BGN', 'BHD', 'BIF', 'BMD', 'BND', 'BOB', 'BRL',
         'BSD', 'BTN', 'BWP', 'BYN', 'BZD', 'CAD', 'CDF', 'CHF', 'CLP', 'CNY',

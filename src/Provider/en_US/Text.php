@@ -35,7 +35,7 @@ class Text extends \Poppy\Faker\Provider\Text
      * @see http://www.gutenberg.org/cache/epub/11/pg11.txt
      * @var string
      */
-    protected static $baseText = <<<'EOT'
+    protected static string $baseText = <<<'EOT'
 CHAPTER I. Down the Rabbit-Hole
 
 Alice was beginning to get very tired of sitting by her sister on the

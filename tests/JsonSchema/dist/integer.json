@@ -1,10 +1,10 @@
 {
-    "typeOnly": -583766732,
+    "typeOnly": 1137911430,
     "typeAndEnum": -100,
-    "typeAndMinimum": 587607680,
-    "typeAndExcludeMinimum": -554925157,
-    "typeAndMaximum": -411280110,
-    "typeAndMinimumAndMaximum": -716862,
-    "typeAndMultipleOf": 1815375570,
+    "typeAndMinimum": 827794074,
+    "typeAndExcludeMinimum": 2,
+    "typeAndMaximum": -1800759333,
+    "typeAndMinimumAndMaximum": -1801144,
+    "typeAndMultipleOf": -5886682653,
     "$schema": "http://example.com/schema/integer.json"
 }

@@ -4,7 +4,7 @@ namespace Poppy\Faker\Provider\zh_TW;
 
 class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
 {
-    protected static $formats = [
+    protected static array $formats = [
         '+8869########',
         '+886-9##-###-###',
         '09########',

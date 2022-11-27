@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class Lorem extends Base
 {
-    protected static $wordList = [
+    protected static array $wordList = [
         'alias', 'consequatur', 'aut', 'perferendis', 'sit', 'voluptatem',
         'accusantium', 'doloremque', 'aperiam', 'eaque', 'ipsa', 'quae', 'ab',
         'illo', 'inventore', 'veritatis', 'et', 'quasi', 'architecto',

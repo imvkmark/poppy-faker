@@ -14,12 +14,12 @@ final class Ref
     /**
      * @var Faker
      */
-    private $faker;
+    private Faker $faker;
 
     /**
      * @var string
      */
-    private $schemaDir;
+    private string $schemaDir;
 
     public function __construct(Faker $faker, $schemaDir)
     {

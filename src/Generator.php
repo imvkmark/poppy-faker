@@ -265,7 +265,7 @@ class Generator
      */
     public function parse($string)
     {
-        return preg_replace_callback('/\{\{\s?(\w+)\s?\}\}/u', [$this, 'callFormatWithMatches'], $string);
+        return preg_replace_callback('/\{\{\s?(\w+)\s?}}/u', [$this, 'callFormatWithMatches'], $string);
     }
 
     /**

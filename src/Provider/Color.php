@@ -7,13 +7,13 @@ namespace Poppy\Faker\Provider;
  */
 class Color extends Base
 {
-    protected static $safeColorNames = [
+    protected static array $safeColorNames = [
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
         'gray', 'yellow', 'fuchsia', 'aqua', 'white',
     ];
 
-    protected static $allColorNames = [
+    protected static array $allColorNames = [
         'AliceBlue', 'AntiqueWhite', 'Aqua', 'Aquamarine',
         'Azure', 'Beige', 'Bisque', 'Black', 'BlanchedAlmond',
         'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',

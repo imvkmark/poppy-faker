@@ -11,7 +11,7 @@ class Biased extends Base
      * The algorithm creates two doubles, x ∈ [0, 1], y ∈ [0, 1) and checks whether the
      * return value of $function for x is greater than or equal to y. If this is
      * the case the number is accepted and x is mapped to the appropriate integer
-     * between $min and $max. Otherwise two new doubles are created until the pair
+     * between $min and $max. Otherwise, two new doubles are created until the pair
      * is accepted.
      *
      * @param integer  $min      Minimum value of the generated integers.

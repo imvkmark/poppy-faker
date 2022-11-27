@@ -12,35 +12,9 @@
         {},
         {}
     ],
-    "typeAndMaxItems": [
-        [
-            1709492743
-        ],
-        [
-            []
-        ],
-        [
-            {}
-        ],
-        [
-            false
-        ],
-        [
-            -1589005917
-        ],
-        [],
-        [
-            null
-        ],
-        [],
-        [
-            false
-        ],
-        []
-    ],
+    "typeAndMaxItems": [],
     "typeAndMultipleItems": [
-        1777723919,
-        "Vel."
+        2072249318
     ],
     "$schema": "http://example.com/schema/ref_inline.json"
 }

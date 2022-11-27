@@ -4,24 +4,31 @@ namespace Poppy\Faker\Provider;
 
 class Address extends Base
 {
-    protected static $citySuffix           = ['Ville'];
-    protected static $streetSuffix         = ['Street'];
-    protected static $cityFormats          = [
+    protected static array $citySuffix = ['Ville'];
+
+    protected static array $streetSuffix = ['Street'];
+
+    protected static array $cityFormats = [
         '{{firstName}}{{citySuffix}}',
     ];
-    protected static $streetNameFormats    = [
+
+    protected static array $streetNameFormats = [
         '{{lastName}} {{streetSuffix}}',
     ];
-    protected static $streetAddressFormats = [
+
+    protected static array $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',
     ];
-    protected static $addressFormats       = [
+
+    protected static array $addressFormats = [
         '{{streetAddress}} {{postcode}} {{city}}',
     ];
 
-    protected static $buildingNumber = ['%#'];
-    protected static $postcode       = ['#####'];
-    protected static $country        = [];
+    protected static array $buildingNumber = ['%#'];
+
+    protected static array $postcode = ['#####'];
+
+    protected static array $country = [];
 
     /**
      * @example 'Sashabury'
@@ -98,7 +105,7 @@ class Address extends Base
     /**
      * @example 'Japan'
      */
-    public static function country()
+    public static function country():string
     {
         return static::randomElement(static::$country);
     }

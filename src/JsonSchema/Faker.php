@@ -22,7 +22,7 @@ final class Faker
      *
      * @var array
      */
-    private $fakers = [
+    private array $fakers = [
         'null'    => 'fakeNull',
         'boolean' => 'fakeBoolean',
         'integer' => 'fakeInteger',
@@ -35,7 +35,7 @@ final class Faker
     /**
      * @var string
      */
-    private $schemaDir;
+    private string $schemaDir = '';
 
     /**
      * Create fake data with JSON schema
@@ -86,7 +86,7 @@ final class Faker
         throw new LogicException;
     }
 
-    public function mergeObject()
+    public function mergeObject(): object
     {
         $merged  = [];
         $objList = func_get_args();
@@ -102,14 +102,14 @@ final class Faker
     {
         $offset = ($schema->exclusiveMaximum ?? false) ? 1 : 0;
 
-        return (int) ($schema->maximum ?? mt_getrandmax()) - $offset;
+        return (int) (($schema->maximum ?? mt_getrandmax()) - $offset);
     }
 
     public function getMinimum($schema): int
     {
         $offset = ($schema->exclusiveMinimum ?? false) ? 1 : 0;
 
-        return (int) ($schema->minimum ?? -mt_getrandmax()) + $offset;
+        return (int) (($schema->minimum ?? -mt_getrandmax()) + $offset);
     }
 
     public function resolveDependencies(stdClass $schema, array $keys): array
@@ -124,7 +124,7 @@ final class Faker
         return $resolved;
     }
 
-    public function getRandomSchema()
+    public function getRandomSchema(): object
     {
         $fakerNames = array_keys($this->fakers);
 

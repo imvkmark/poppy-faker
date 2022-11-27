@@ -4,13 +4,13 @@ namespace Poppy\Faker\Provider;
 
 class Company extends Base
 {
-    protected static $formats = [
+    protected static array $formats = [
         '{{lastName}} {{companySuffix}}',
     ];
 
-    protected static $companySuffix = ['Ltd'];
+    protected static array $companySuffix = ['Ltd'];
 
-    protected static $jobTitleFormat = [
+    protected static array $jobTitleFormat = [
         '{{word}}',
     ];
 

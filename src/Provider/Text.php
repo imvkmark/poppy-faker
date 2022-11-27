@@ -2,14 +2,21 @@
 
 namespace Poppy\Faker\Provider;
 
+use InvalidArgumentException;
+
 abstract class Text extends Base
 {
-    protected static $baseText                = '';
-    protected static $separator               = ' ';
-    protected static $separatorLen            = 1;
-    protected        $explodedText;
-    protected        $consecutiveWords        = [];
-    protected static $textStartsWithUppercase = true;
+    protected static string $baseText = '';
+
+    protected static string $separator = ' ';
+
+    protected static int $separatorLen = 1;
+
+    protected static bool $textStartsWithUppercase = true;
+
+    protected $explodedText;
+
+    protected array $consecutiveWords = [];
 
     /**
      * Generate a text string by the Markov chain algorithm.
@@ -26,18 +33,18 @@ abstract class Text extends Base
      * @return string
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
      */
-    public function realText($maxNbChars = 200, $indexSize = 2)
+    public function realText(int $maxNbChars = 200, int $indexSize = 2)
     {
         if ($maxNbChars < 10) {
-            throw new \InvalidArgumentException('maxNbChars must be at least 10');
+            throw new InvalidArgumentException('maxNbChars must be at least 10');
         }
 
         if ($indexSize < 1) {
-            throw new \InvalidArgumentException('indexSize must be at least 1');
+            throw new InvalidArgumentException('indexSize must be at least 1');
         }
 
         if ($indexSize > 5) {
-            throw new \InvalidArgumentException('indexSize must be at most 5');
+            throw new InvalidArgumentException('indexSize must be at most 5');
         }
 
         $words        = $this->getConsecutiveWords($indexSize);

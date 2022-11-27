@@ -59,7 +59,7 @@ class Address extends \Poppy\Faker\Provider\Address
         '高新开发区', '经济开发新区', '新区',
     ];
 
-    protected static $country = [
+    protected static array $country = [
         '阿富汗', '阿拉斯加', '阿尔巴尼亚', '阿尔及利亚',
         '安道尔', '安哥拉', '安圭拉岛英', '安提瓜和巴布达',
         '阿根廷', '亚美尼亚', '阿鲁巴岛', '阿森松', '澳大利亚',
@@ -129,7 +129,7 @@ class Address extends \Poppy\Faker\Provider\Address
         return static::randomElement(static::$areas);
     }
 
-    public static function country()
+    public static function country(): string
     {
         return static::randomElement(static::$country);
     }

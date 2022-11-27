@@ -4,12 +4,12 @@ namespace Poppy\Faker\Provider\zh_TW;
 
 class Address extends \Poppy\Faker\Provider\Address
 {
-    protected static $streetNameFormats = [
+    protected static array $streetNameFormats = [
         '{{street}}{{streetSuffix}}',
         '{{street}}{{streetSuffix}}{{randomChineseNumber}}段',
     ];
 
-    protected static $streetAddressFormats = [
+    protected static array $streetAddressFormats = [
         '{{streetName}}{{randomNumber3}}號',
         '{{streetName}}{{randomNumber3}}號{{randomNumber2}}樓',
         '{{streetName}}{{randomNumber3}}巷{{randomNumber3}}號',
@@ -18,20 +18,20 @@ class Address extends \Poppy\Faker\Provider\Address
         '{{streetName}}{{randomNumber3}}巷{{randomNumber3}}弄{{randomNumber3}}號{{randomNumber2}}樓',
     ];
 
-    protected static $secondaryAddressSuffix = ['室', '房'];
+    protected static array $secondaryAddressSuffix = ['室', '房'];
 
-    protected static $addressFormats = [
+    protected static array $addressFormats = [
         '{{postcode}} {{city}}{{streetAddress}}',
     ];
 
-    protected static $streetSuffix = [
+    protected static array $streetSuffix = [
         '路', '街',
     ];
 
     /**
      * @link http://blog.davidou.org/archives/583
      */
-    protected static $street = [
+    protected static array $street = [
         '東英二', '大公十三', '美術南一', '漁港',
         '德美', '福林', '榮安', '忠孝南', '新立',
         '清壽', '豐偉', '華中三', '賴明', '樹仁二',
@@ -160,7 +160,7 @@ class Address extends \Poppy\Faker\Provider\Address
     /**
      * @link http://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83
      */
-    protected static $city = [
+    protected static array $city = [
         '新北市' => [
             '板橋區', '三重區', '中和區', '永和區',
             '新莊區', '新店區', '樹林區', '鶯歌區',
@@ -295,7 +295,7 @@ class Address extends \Poppy\Faker\Provider\Address
     /**
      * @link http://terms.naer.edu.tw/download/287/
      */
-    protected static $country = [
+    protected static array $country = [
         '不丹', '中非', '丹麥', '伊朗', '冰島', '剛果',
         '加彭', '北韓', '南非', '卡達', '印尼', '印度',
         '古巴', '哥德', '埃及', '多哥', '寮國', '尼日',

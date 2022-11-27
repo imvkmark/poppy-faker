@@ -1,113 +1,153 @@
 {
-  "type": "object",
-  "required": [
-    "typeOnly",
-    "typeAndAdditionalPropertiesFalse",
-    "typeAndAdditionalPropertiesTrue",
-    "typeAndPatternPropertiesAndAdditionalPropertiesFalse",
-    "typeAndPatternPropertiesAndAdditionalPropertiesTrue",
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject",
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinProperties",
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinPropertiesAndRequied",
-    "deepNested"
-  ],
-  "properties": {
-    "typeOnly": {
-      "type": "object"
-    },
-    "typeAndMinProperties": {
-      "type": "object",
-      "minProperties": 5
-    },
-    "typeAndMaxProperties": {
-      "type": "object",
-      "maxProperties": 5
-    },
-    "typeAndMinPropertiesAndMaxProperties": {
-      "type": "object",
-      "minProperties": 2,
-      "maxProperties": 10
-    },
-    "typeAndAdditionalPropertiesFalse": {
-      "type": "object",
-      "additionalProperties": false
-    },
-    "typeAndAdditionalPropertiesTrue": {
-      "type": "object",
-      "additionalProperties": true
-    },
-    "typeAndPatternPropertiesAndAdditionalPropertiesFalse": {
-      "type": "object",
-      "patternProperties": {
-        "^S_[a-z]{0,20}": { "type": "string" },
-        "^I_[A-Z]{3}[0-9]{4,8}": { "type": "integer" }
-      },
-      "additionalProperties": false
-    },
-    "typeAndPatternPropertiesAndAdditionalPropertiesTrue": {
-      "type": "object",
-      "patternProperties": {
-        "^S_[a-z]{0,20}": { "type": "string" },
-        "^I_[A-Z]{3}[0-9]{4,8}": { "type": "integer" }
-      },
-      "additionalProperties": true
-    },
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject": {
-      "type": "object",
-      "properties": {
-        "builtin": { "type": "number" }
-      },
-      "patternProperties": {
-        "^S_[a-z]{0,20}": { "type": "string" },
-        "^I_[A-Z]{3}[0-9]{4,8}": { "type": "integer" }
-      },
-      "additionalProperties": { "type": "string" }
-    },
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinProperties": {
-      "type": "object",
-      "minProperties": 3,
-      "properties": {
-        "builtin": { "type": "number" }
-      },
-      "patternProperties": {
-        "^S_[a-z]{0,20}": { "type": "string" },
-        "^I_[A-Z]{3}[0-9]{4,8}": { "type": "integer" }
-      },
-      "additionalProperties": { "type": "string" }
-    },
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinPropertiesAndRequied": {
-      "type": "object",
-      "minProperties": 3,
-      "required": ["builtin"],
-      "properties": {
-        "builtin": { "type": "number" }
-      },
-      "patternProperties": {
-        "^S_[a-z]{0,20}": { "type": "string" },
-        "^I_[A-Z]{3}[0-9]{4,8}": { "type": "integer" }
-      },
-      "additionalProperties": { "type": "string" }
-    },
-    "deepNested": {
-      "type": "object",
-      "required": ["first"],
-      "properties": {
-        "first": {
-          "type": "object",
-          "required": ["second"],
-          "properties": {
-            "second": {
-              "type": "object",
-              "required": ["third"],
-              "properties": {
-                "third": {
-                  "type": "object"
+    "type": "object",
+    "required": [
+        "typeOnly",
+        "typeAndAdditionalPropertiesFalse",
+        "typeAndAdditionalPropertiesTrue",
+        "typeAndPatternPropertiesAndAdditionalPropertiesFalse",
+        "typeAndPatternPropertiesAndAdditionalPropertiesTrue",
+        "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject",
+        "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinProperties",
+        "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinPropertiesAndRequied",
+        "deepNested"
+    ],
+    "properties": {
+        "typeOnly": {
+            "type": "object"
+        },
+        "typeAndMinProperties": {
+            "type": "object",
+            "minProperties": 5
+        },
+        "typeAndMaxProperties": {
+            "type": "object",
+            "maxProperties": 5
+        },
+        "typeAndMinPropertiesAndMaxProperties": {
+            "type": "object",
+            "minProperties": 2,
+            "maxProperties": 10
+        },
+        "typeAndAdditionalPropertiesFalse": {
+            "type": "object",
+            "additionalProperties": false
+        },
+        "typeAndAdditionalPropertiesTrue": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "typeAndPatternPropertiesAndAdditionalPropertiesFalse": {
+            "type": "object",
+            "patternProperties": {
+                "^S_[a-z]{0,20}": {
+                    "type": "string"
+                },
+                "^I_[A-Z]{3}[0-9]{4,8}": {
+                    "type": "integer"
                 }
-              }
+            },
+            "additionalProperties": false
+        },
+        "typeAndPatternPropertiesAndAdditionalPropertiesTrue": {
+            "type": "object",
+            "patternProperties": {
+                "^S_[a-z]{0,20}": {
+                    "type": "string"
+                },
+                "^I_[A-Z]{3}[0-9]{4,8}": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": true
+        },
+        "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject": {
+            "type": "object",
+            "properties": {
+                "builtin": {
+                    "type": "number"
+                }
+            },
+            "patternProperties": {
+                "^S_[a-z]{0,20}": {
+                    "type": "string"
+                },
+                "^I_[A-Z]{3}[0-9]{4,8}": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
             }
-          }
+        },
+        "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinProperties": {
+            "type": "object",
+            "minProperties": 3,
+            "properties": {
+                "builtin": {
+                    "type": "number"
+                }
+            },
+            "patternProperties": {
+                "^S_[a-z]{0,20}": {
+                    "type": "string"
+                },
+                "^I_[A-Z]{3}[0-9]{4,8}": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinPropertiesAndRequied": {
+            "type": "object",
+            "minProperties": 3,
+            "required": [
+                "builtin"
+            ],
+            "properties": {
+                "builtin": {
+                    "type": "number"
+                }
+            },
+            "patternProperties": {
+                "^S_[a-z]{0,20}": {
+                    "type": "string"
+                },
+                "^I_[A-Z]{3}[0-9]{4,8}": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "deepNested": {
+            "type": "object",
+            "required": [
+                "first"
+            ],
+            "properties": {
+                "first": {
+                    "type": "object",
+                    "required": [
+                        "second"
+                    ],
+                    "properties": {
+                        "second": {
+                            "type": "object",
+                            "required": [
+                                "third"
+                            ],
+                            "properties": {
+                                "third": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

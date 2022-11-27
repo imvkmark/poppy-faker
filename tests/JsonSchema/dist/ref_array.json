@@ -3,7 +3,7 @@
         {
             "prop1": {
                 "typeOnly": [
-                    false
+                    true
                 ]
             }
         },

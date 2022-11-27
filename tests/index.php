@@ -135,6 +135,7 @@ py_example('Company', [
 	['随机生成公司', '$faker->company;'],
 	['随机生成公司后缀', '$faker->companySuffix;'],
 	['随机生成职务', '$faker->jobTitle;'],
+	['随机生成广告语', '$faker->catchPhrase;'],
 ], $md);
 
 

@@ -4,18 +4,16 @@
     "typeAndAdditionalPropertiesTrue": {},
     "typeAndPatternPropertiesAndAdditionalPropertiesFalse": {},
     "typeAndPatternPropertiesAndAdditionalPropertiesTrue": {},
-    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject": {
-        "builtin": 493418045
-    },
+    "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObject": {},
     "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinProperties": {
-        "perspiciatis": "Ut.",
-        "repellendus": "Aut.",
-        "placeat": "Ut."
+        "builtin": -2033667293,
+        "modi": "Cum.",
+        "id": "Quae."
     },
     "typeAndPropertiesAndPatternPropertiesAndAdditionalPropertiesObjectAndMinPropertiesAndRequied": {
-        "builtin": -824289051,
-        "sapiente": "Qui.",
-        "et": "Qui."
+        "builtin": -300504395,
+        "eos": "Eum.",
+        "et": "Ut."
     },
     "deepNested": {
         "first": {
@@ -25,5 +23,13 @@
         }
     },
     "typeAndMaxProperties": {},
+    "typeAndMinPropertiesAndMaxProperties": {
+        "sit": [
+            [
+                936283795
+            ]
+        ],
+        "et": "Amet."
+    },
     "$schema": "http://example.com/schema/object.json"
 }

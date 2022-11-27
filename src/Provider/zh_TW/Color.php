@@ -7,13 +7,13 @@ class Color extends \Poppy\Faker\Provider\Color
     /**
      * @link http://zh.wikipedia.org/zh-tw/%E9%A2%9C%E8%89%B2%E5%88%97%E8%A1%A8
      */
-    protected static $safeColorNames = [
+    protected static array $safeColorNames = [
         '黑色', '粟色', '綠色', '藏青', '橄欖色',
         '紫', '鳧綠', '鮮綠色', '藍色', '銀色',
         '灰色', '黃色', '品紅', '水色', '白色',
     ];
 
-    protected static $allColorNames = [
+    protected static array $allColorNames = [
         '黑色', '昏灰', '灰色', '暗灰', '銀色', '亮灰色',
         '庚斯博羅灰', '白煙色', '白色', '雪色', '鐵灰色',
         '沙棕', '玫瑰褐', '亮珊瑚色', '印度紅', '褐色',
