@@ -92,6 +92,7 @@ py_example('Lorem', [
 	['随机生成一个段落', '$faker->paragraph($nbSentences = 3, $variableNbSentences = true);'],
 	['随机生成指定个数段落', '$faker->paragraphs($nb = 3, $asText = false);'],
 	['随机生成一个文本', '$faker->text($maxNbChars = 200);'],
+	['随机生成一句诗词', '$faker->poem;'],
 ], $md);
 
 
