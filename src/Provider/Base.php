@@ -125,7 +125,7 @@ class Base
      *
      * @return integer
      */
-    public static function randomDigitNotNull()
+    public static function randomDigitNotNull(): int
     {
         return mt_rand(1, 9);
     }
@@ -465,9 +465,7 @@ class Base
                 $string[$toReplace[$i]] = $numbers[$i];
             }
         }
-        $string = self::replaceWildcard($string, '%', 'static::randomDigitNotNull');
-
-        return $string;
+        return self::replaceWildcard($string, '%', 'static::randomDigitNotNull');
     }
 
     /**
