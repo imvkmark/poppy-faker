@@ -350,7 +350,7 @@ class Address extends \Poppy\Faker\Provider\Address
         '千里達及托巴哥',
     ];
 
-    protected static $postcode = ['###-##', '###'];
+    protected static array $postcode = ['###-##', '###'];
 
     public function street()
     {

@@ -35,23 +35,24 @@ class Person extends \Poppy\Faker\Provider\Person
     /**
      * @see https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%B0%91%E8%BA%AB%E5%88%86%E8%AD%89
      */
-    public static $idDigitValidator = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1];
+    public static array $idDigitValidator = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1];
 
-    protected static $maleNameFormats = [
+    protected static array $maleNameFormats = [
         '{{lastName}}{{firstNameMale}}',
     ];
 
-    protected static $femaleNameFormats = [
+    protected static array $femaleNameFormats = [
         '{{lastName}}{{firstNameFemale}}',
     ];
 
-    protected static $titleMale   = ['先生', '博士', '教授'];
-    protected static $titleFemale = ['小姐', '太太', '博士', '教授'];
+    protected static array $titleMale = ['先生', '博士', '教授'];
+
+    protected static array $titleFemale = ['小姐', '太太', '博士', '教授'];
 
     /**
      * @link http://zh.wikipedia.org/wiki/%E7%99%BE%E5%AE%B6%E5%A7%93
      */
-    protected static $lastName = [
+    protected static array $lastName = [
         '趙', '錢', '孫', '李', '周', '吳', '鄭', '王', '馮',
         '陳', '褚', '衛', '蔣', '沈', '韓', '楊', '朱', '秦',
         '尤', '許', '何', '呂', '施', '張', '孔', '曹', '嚴',
@@ -194,8 +195,6 @@ class Person extends \Poppy\Faker\Provider\Person
             $checkSumDigit = 0;
         }
 
-        $id = $birthPlace . $genderCode . $randomNumberCode . $checkSumDigit;
-
-        return $id;
+        return $birthPlace . $genderCode . $randomNumberCode . $checkSumDigit;
     }
 }
