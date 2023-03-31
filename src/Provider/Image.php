@@ -27,7 +27,7 @@ class Image extends Base
      */
     public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = 'eae0d0', $bg_color = '282828', $font_size = ''): string
     {
-        $baseUrl = "https://jdc.jd.com/img";
+        $baseUrl = "https://i.huowanes.com/img";
         $url     = "/{$width}x{$height}";
 
         $url .= '?';
