@@ -1,7 +1,0 @@
-{
-    "typeOnly": {
-        "typeOnly": []
-    },
-    "typeAndMinItems": {},
-    "$schema": "http://example.com/schema/ref_file.json"
-}

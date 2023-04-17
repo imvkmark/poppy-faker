@@ -24,7 +24,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Poppy\\Faker\\": "src/"
+            "Poppy\\Faker\\": "src/",
+            "Faker\\": "src/Faker/"
         }
     },
     "autoload-dev": {
