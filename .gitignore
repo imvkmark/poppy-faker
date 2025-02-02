@@ -1,0 +1,2 @@
+tests/JsonSchema/dist/*
+!tests/JsonSchema/dist/.gitkeep
