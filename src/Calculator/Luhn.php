@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Calculator;
+namespace Poppy\Faker\Calculator;
 
 use InvalidArgumentException;
 

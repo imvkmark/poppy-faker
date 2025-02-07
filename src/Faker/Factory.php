@@ -2,7 +2,7 @@
 
 namespace Faker;
 
-class Factory extends \Weiran\Faker\Factory
+class Factory extends \Poppy\Faker\Factory
 {
 
 }

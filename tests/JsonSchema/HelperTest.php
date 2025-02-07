@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Weiran\Faker\Tests\JsonSchema;
+namespace Poppy\Faker\Tests\JsonSchema;
 
 use Exception;
 use JsonSchema\Validator;
-use Weiran\Faker\JsonSchema\Faker;
-use Weiran\Faker\Provider\Internet;
+use Poppy\Faker\JsonSchema\Faker;
+use Poppy\Faker\Provider\Internet;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)

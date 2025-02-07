@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider\zh_TW;
+namespace Poppy\Faker\Provider\zh_TW;
 
 class Person extends \Poppy\Faker\Provider\Person
 {

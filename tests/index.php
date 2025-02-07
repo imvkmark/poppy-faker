@@ -1,7 +1,7 @@
 <?php
 
 
-use Weiran\Faker\Factory;
+use Poppy\Faker\Factory;
 
 include dirname(__DIR__) . '/src/autoload.php';
 

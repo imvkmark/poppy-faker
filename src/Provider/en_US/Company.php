@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider\en_US;
+namespace Poppy\Faker\Provider\en_US;
 
 class Company extends \Poppy\Faker\Provider\Company
 {

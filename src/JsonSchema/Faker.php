@@ -7,11 +7,11 @@ namespace Weiran\Faker\JsonSchema;
 
 use InvalidArgumentException;
 use LogicException;
-use Weiran\Faker\Factory;
-use Weiran\Faker\Provider\Base;
-use Weiran\Faker\Provider\DateTime;
-use Weiran\Faker\Provider\Internet;
-use Weiran\Faker\Provider\Lorem;
+use Poppy\Faker\Factory;
+use Poppy\Faker\Provider\Base;
+use Poppy\Faker\Provider\DateTime;
+use Poppy\Faker\Provider\Internet;
+use Poppy\Faker\Provider\Lorem;
 use SplFileInfo;
 use stdClass;
 

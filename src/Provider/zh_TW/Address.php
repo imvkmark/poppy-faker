@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider\zh_TW;
+namespace Poppy\Faker\Provider\zh_TW;
 
 class Address extends \Poppy\Faker\Provider\Address
 {

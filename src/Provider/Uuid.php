@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Weiran\Faker\Provider;
+namespace Poppy\Faker\Provider;
 
 class Uuid extends Base
 {

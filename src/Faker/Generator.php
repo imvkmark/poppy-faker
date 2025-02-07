@@ -2,7 +2,7 @@
 
 namespace Faker;
 
-class Generator extends \Weiran\Faker\Generator
+class Generator extends \Poppy\Faker\Generator
 {
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider\zh_TW;
+namespace Poppy\Faker\Provider\zh_TW;
 
 class DateTime extends \Poppy\Faker\Provider\DateTime
 {

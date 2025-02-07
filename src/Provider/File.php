@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider;
+namespace Poppy\Faker\Provider;
 
 class File extends Base
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Weiran\Faker\Guesser;
+namespace Poppy\Faker\Guesser;
 
-use Weiran\Faker\Generator;
-use Weiran\Faker\Provider\Base;
+use Poppy\Faker\Generator;
+use Poppy\Faker\Provider\Base;
 
 class Name
 {

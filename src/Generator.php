@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker;
+namespace Poppy\Faker;
 
 use DateTime;
 use InvalidArgumentException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider\zh_CN;
+namespace Poppy\Faker\Provider\zh_CN;
 
 class Internet extends \Poppy\Faker\Provider\Internet
 {

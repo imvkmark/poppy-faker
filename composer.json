@@ -25,12 +25,12 @@
     "autoload": {
         "psr-4": {
             "Faker\\": "src/Faker/",
-            "Weiran\\Faker\\": "src/"
+            "Poppy\\Faker\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Weiran\\Faker\\Test\\": "tests/"
+            "Poppy\\Faker\\Test\\": "tests/"
         }
     },
     "config": {

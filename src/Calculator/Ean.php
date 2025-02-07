@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Calculator;
+namespace Poppy\Faker\Calculator;
 
 /**
  * Utility class for validating EAN-8 and EAN-13 numbers

@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace Weiran\Faker\Tests\JsonSchema;
+namespace Poppy\Faker\Tests\JsonSchema;
 
 use JsonSchema\Validator;
-use Weiran\Faker\JsonSchema\FakeJsons;
+use Poppy\Faker\JsonSchema\FakeJsons;
 
 class FakeJsonsTest extends TestCase
 {

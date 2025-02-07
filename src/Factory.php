@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker;
+namespace Poppy\Faker;
 
 use InvalidArgumentException;
 
@@ -59,7 +59,7 @@ class Factory
      */
     protected static function findProviderClassname($provider, $locale = '')
     {
-        $providerClass = 'Weiran\\Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
+        $providerClass = 'Poppy\\Faker\\' . ($locale ? sprintf('Provider\%s\%s', $locale, $provider) : sprintf('Provider\%s', $provider));
         if (class_exists($providerClass)) {
             return $providerClass;
         }

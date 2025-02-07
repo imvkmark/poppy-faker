@@ -1,8 +1,8 @@
 <?php
 
-namespace Weiran\Faker\Provider;
+namespace Poppy\Faker\Provider;
 
-use Weiran\Faker\Calculator\Luhn;
+use Poppy\Faker\Calculator\Luhn;
 
 class PhoneNumber extends Base
 {

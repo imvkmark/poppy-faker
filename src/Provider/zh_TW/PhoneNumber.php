@@ -1,6 +1,6 @@
 <?php
 
-namespace Weiran\Faker\Provider\zh_TW;
+namespace Poppy\Faker\Provider\zh_TW;
 
 class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
 {

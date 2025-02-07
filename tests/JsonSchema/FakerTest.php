@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Weiran\Faker\Tests\JsonSchema;
+namespace Poppy\Faker\Tests\JsonSchema;
 
 use InvalidArgumentException;
 use JsonSchema\Validator;
-use Weiran\Faker\JsonSchema\Faker;
-use Weiran\Faker\JsonSchema\UnsupportedTypeException;
+use Poppy\Faker\JsonSchema\Faker;
+use Poppy\Faker\JsonSchema\UnsupportedTypeException;
 use SplFileInfo;
 
 class FakerTest extends TestCase

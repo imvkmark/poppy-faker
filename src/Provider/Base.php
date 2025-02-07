@@ -1,16 +1,16 @@
 <?php
 
-namespace Weiran\Faker\Provider;
+namespace Poppy\Faker\Provider;
 
 use Closure;
 use Countable;
 use InvalidArgumentException;
 use LengthException;
 use OverflowException;
-use Weiran\Faker\DefaultGenerator;
-use Weiran\Faker\Generator;
-use Weiran\Faker\UniqueGenerator;
-use Weiran\Faker\ValidGenerator;
+use Poppy\Faker\DefaultGenerator;
+use Poppy\Faker\Generator;
+use Poppy\Faker\UniqueGenerator;
+use Poppy\Faker\ValidGenerator;
 use Traversable;
 
 class Base

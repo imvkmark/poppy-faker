@@ -1,11 +1,11 @@
 <?php
 
-namespace Weiran\Faker\Provider;
+namespace Poppy\Faker\Provider;
 
 use DOMDocument;
 use DOMElement;
-use Weiran\Faker\Generator;
-use Weiran\Faker\UniqueGenerator;
+use Poppy\Faker\Generator;
+use Poppy\Faker\UniqueGenerator;
 
 class HtmlLorem extends Base
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Weiran\Faker\Tests\JsonSchema;
+namespace Poppy\Faker\Tests\JsonSchema;
 
 use ReflectionException;
 use ReflectionMethod;

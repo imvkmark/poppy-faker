@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Weiran\Faker\JsonSchema;
+namespace Poppy\Faker\JsonSchema;
 
 use Exception;
 use FilesystemIterator;
