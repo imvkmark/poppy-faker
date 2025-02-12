@@ -21,7 +21,7 @@ class FakerTest extends TestCase
         $validator = new Validator();
 
         $actual = (new Faker)->generate($schema);
-        $validator->check($actual, $schema);
+        $validator->validate($actual, $schema);
 
         $this->assertTrue($validator->isValid(), (string) json_encode($validator->getErrors(), JSON_PRETTY_PRINT));
     }
@@ -35,7 +35,7 @@ class FakerTest extends TestCase
         $validator = new Validator();
 
         $actual = (new Faker)->generate(new SplFileInfo($schema));
-        $validator->check($actual, $schema);
+        $validator->validate($actual, $schema);
 
         $this->assertTrue($validator->isValid(), (string) json_encode($validator->getErrors(), JSON_PRETTY_PRINT));
     }

@@ -112,7 +112,7 @@ class HelperTest extends TestCase
         $validator = new Validator();
 
         $actual = (new Faker)->getFormattedValue($schema);
-        $validator->check($actual, $schema);
+        $validator->validate($actual, $schema);
 
         $this->assertTrue($validator->isValid());
     }
