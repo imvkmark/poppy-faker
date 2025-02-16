@@ -8,8 +8,10 @@ namespace Poppy\Faker\Calculator;
  */
 class Ean
 {
-    /** @var string EAN validation pattern */
-    const PATTERN = '/^(?:\d{8}|\d{13})$/';
+    /**
+     * @var string EAN validation pattern
+     */
+    private const PATTERN = '/^(?:\d{8}|\d{13})$/';
 
     /**
      * Computes the checksum of an EAN number.
@@ -19,18 +21,18 @@ class Ean
      * @param string $digits
      * @return int
      */
-    public static function checksum($digits)
+    public static function checksum(string $digits): int
     {
         $length = strlen($digits);
 
         $even = 0;
         for ($i = $length - 1; $i >= 0; $i -= 2) {
-            $even += $digits[$i];
+            $even += (int) $digits[$i];
         }
 
         $odd = 0;
         for ($i = $length - 2; $i >= 0; $i -= 2) {
-            $odd += $digits[$i];
+            $odd += (int) $digits[$i];
         }
 
         return (10 - ((3 * $even + $odd) % 10)) % 10;
@@ -43,12 +45,12 @@ class Ean
      * @param string $ean An EAN number
      * @return boolean
      */
-    public static function isValid($ean)
+    public static function isValid(string $ean): bool
     {
         if (!preg_match(self::PATTERN, $ean)) {
             return false;
         }
 
-        return self::checksum(substr($ean, 0, -1)) === intval(substr($ean, -1));
+        return self::checksum(substr($ean, 0, -1)) === (int) substr($ean, -1);
     }
 }
