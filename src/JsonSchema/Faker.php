@@ -40,9 +40,9 @@ final class Faker
     /**
      * Create fake data with JSON schema
      *
-     * @param SplFileInfo|stdClass $schema       Data structure written in JSON Schema
+     * @param SplFileInfo|stdClass $schema Data structure written in JSON Schema
      * @param stdClass|null        $parentSchema parent schema when it is subschema
-     * @param string|null          $schemaDir    forced directory in object loop
+     * @param string|null          $schemaDir forced directory in object loop
      *
      * @throws UnsupportedTypeException Throw when unsupported type specified
      */
@@ -92,8 +92,9 @@ final class Faker
         $objList = func_get_args();
 
         foreach ($objList as $obj) {
-            $merged = array_merge($merged, (array) $obj);
+            array_push($merged, ...(array) $obj);
         }
+
 
         return (object) $merged;
     }
