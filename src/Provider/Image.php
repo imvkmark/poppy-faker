@@ -15,7 +15,7 @@ class Image extends Base
      * Generate the URL that will return a random image
      *
      * Set randomize too false to remove the random GET parameter at the end of the url.
-     * https://fakeimg.pl/
+     * https://devtool.tech/placeholder
      * @param integer     $width
      * @param integer     $height
      * @param string|null $word
@@ -23,16 +23,15 @@ class Image extends Base
      * @param string      $bg_color
      * @param string      $font_size
      * @return string
-     * @example https://jdc.jd.com/img/500x300?color=6190e8&text=poppy&textColor=ffffff
      */
     public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = 'eae0d0', $bg_color = '282828', $font_size = ''): string
     {
-        $baseUrl = "https://i.huowanes.com/img";
-        $url     = "/{$width}x{$height}";
+        $baseUrl = 'https://devtool.tech/api/placeholder';
+        $url     = "/{$width}/{$height}";
 
         $url .= '?';
         if ($font_color) {
-            $url .= "textColor={$font_color}&";
+            $url .= "color={$font_color}&";
         }
 
         if ($word) {
@@ -40,20 +39,12 @@ class Image extends Base
         }
 
         if ($bg_color) {
-            $url .= 'color=' . $bg_color . '&';
+            $url .= 'bgColor=' . $bg_color . '&';
         }
 
         if ($font_size) {
-            $url .= 'fs=' . $font_size . '&';
+            $url .= 'fontSize=' . $font_size . '&';
         }
-        else {
-            // min: 20 /max 100
-            $size = (($width / 10) <= 14)
-                ? 14
-                : (($width / 10) >= 100 ? 100 : round($width / 10));
-            $url  .= 'fs=' . $size . '&';
-        }
-
         return $baseUrl . rtrim($url, '&?');
     }
 
