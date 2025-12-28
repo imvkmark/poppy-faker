@@ -16,7 +16,7 @@ use stdClass;
 
 final class FakeJsons
 {
-    public function __invoke(string $schemaDir, string $distDir, string $schemaUri = null): void
+    public function __invoke(string $schemaDir, string $distDir, ?string $schemaUri = null): void
     {
         $faker = new Faker();
         foreach ($this->files($schemaDir) as $fileInfo) {
@@ -37,8 +37,10 @@ final class FakeJsons
                 $fakeJson = json_encode($fake, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL;
                 fwrite(STDOUT, sprintf("Generate fake file: %s\n", $distFile));
                 file_put_contents($distFile, $fakeJson);
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
                 fwrite(STDOUT, sprintf("%s: %s %s on line %d\n", $fileInfo->getFilename(), $e->getMessage(), $e->getFile(), $e->getLine()));
+
                 continue;
             }
         }
@@ -55,7 +57,7 @@ final class FakeJsons
                     ),
                     RecursiveIteratorIterator::LEAVES_ONLY
                 ),
-                "/^.+\\.json/",
+                '/^.+\\.json/',
                 RegexIterator::MATCH
             );
     }

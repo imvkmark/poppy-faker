@@ -84,7 +84,7 @@ class Company extends \Poppy\Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return implode(' ', $result);
     }
 
     /**
@@ -97,13 +97,14 @@ class Company extends \Poppy\Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
-        return join(' ', $result);
+        return implode(' ', $result);
     }
 
     /**
      * Employer Identification Number (EIN)
      *
      * @link    https://en.wikipedia.org/wiki/Employer_Identification_Number
+     *
      * @example '12-3456789'
      */
     public static function ein()
@@ -111,6 +112,6 @@ class Company extends \Poppy\Faker\Provider\Company
         $prefix = static::randomElement(static::$einPrefixes);
         $suffix = static::numberBetween(0, 9999999);
 
-        return sprintf("%02d-%07d", $prefix, $suffix);
+        return sprintf('%02d-%07d', $prefix, $suffix);
     }
 }

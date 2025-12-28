@@ -9,9 +9,6 @@ class Name
 {
     protected $generator;
 
-    /**
-     * @param Generator $generator
-     */
     public function __construct(Generator $generator)
     {
         $this->generator = $generator;
@@ -20,6 +17,7 @@ class Name
     /**
      * @param string   $name
      * @param int|null $size Length of field, if known
+     *
      * @return callable
      */
     public function guessFormat($name, $size = null)

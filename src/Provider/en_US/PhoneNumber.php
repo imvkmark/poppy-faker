@@ -83,7 +83,7 @@ class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
         $digits[] = self::randomDigit();
         $digits[] = self::randomDigitNot($digits[1]);
 
-        return join('', $digits);
+        return implode('', $digits);
     }
 
     /**
@@ -105,6 +105,6 @@ class PhoneNumber extends \Poppy\Faker\Provider\PhoneNumber
             $digits[] = self::randomDigit();
         }
 
-        return join('', $digits);
+        return implode('', $digits);
     }
 }

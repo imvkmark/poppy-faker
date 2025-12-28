@@ -126,20 +126,23 @@ class Person extends \Poppy\Faker\Provider\Person
         $group  = static::numberBetween(1, 99);
         $serial = static::numberBetween(1, 9999);
 
-        return sprintf("%03d-%02d-%04d", $area, $group, $serial);
+        return sprintf('%03d-%02d-%04d', $area, $group, $serial);
     }
-
 
     public static function idNumber()
     {
         do {
             $agt_no = mt_rand(100000000, 900000000);
             $valid  = true;
-            if (preg_match('/(\d)\1\1/', $agt_no))
-                $valid = false; // Same digit three times consecutively
-            elseif (preg_match('/(\d).*?\1.*?\1.*?\1/', $agt_no))
-                $valid = false; // Same digit four times in string
-        } while ($valid === false);
+            if (preg_match('/(\d)\1\1/', $agt_no)) {
+                $valid = false;
+            } // Same digit three times consecutively
+            elseif (preg_match('/(\d).*?\1.*?\1.*?\1/', $agt_no)) {
+                $valid = false;
+            } // Same digit four times in string
+        }
+        while ($valid === false);
+
         return $agt_no;
     }
 }

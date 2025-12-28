@@ -116,6 +116,7 @@ class Color extends Base
 
     /**
      * @return string
+     *
      * @example '340,50,20'
      */
     public static function hslColor()
@@ -130,6 +131,7 @@ class Color extends Base
 
     /**
      * @return array
+     *
      * @example array(340, 50, 20)
      */
     public static function hslColorAsArray()

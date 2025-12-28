@@ -6,6 +6,4 @@ namespace Poppy\Faker\JsonSchema;
 
 use RuntimeException;
 
-class UnsupportedTypeException extends RuntimeException
-{
-}
+class UnsupportedTypeException extends RuntimeException {}

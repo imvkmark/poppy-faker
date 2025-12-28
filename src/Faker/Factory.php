@@ -2,7 +2,4 @@
 
 namespace Faker;
 
-class Factory extends \Poppy\Faker\Factory
-{
-
-}
+class Factory extends \Poppy\Faker\Factory {}

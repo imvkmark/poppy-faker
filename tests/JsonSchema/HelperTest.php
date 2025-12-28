@@ -19,7 +19,7 @@ class HelperTest extends TestCase
         $maximum = 300;
         $schema  = (object) ['exclusiveMaximum' => true, 'maximum' => $maximum];
 
-        $actual = (new Faker)->getMaximum($schema);
+        $actual = (new Faker())->getMaximum($schema);
 
         // -1 mean exclusive
         $this->assertSame($actual, $maximum - 1);
@@ -30,7 +30,7 @@ class HelperTest extends TestCase
         $maximum = 300;
         $schema  = (object) ['exclusiveMaximum' => false, 'maximum' => $maximum];
 
-        $actual = (new Faker)->getMaximum($schema);
+        $actual = (new Faker())->getMaximum($schema);
 
         $this->assertSame($actual, $maximum);
     }
@@ -40,7 +40,7 @@ class HelperTest extends TestCase
         $maximum = 300;
         $schema  = (object) ['maximum' => $maximum];
 
-        $actual = (new Faker)->getMaximum($schema);
+        $actual = (new Faker())->getMaximum($schema);
 
         $this->assertSame($actual, $maximum);
     }
@@ -50,7 +50,7 @@ class HelperTest extends TestCase
         $minimum = 300;
         $schema  = (object) ['exclusiveMinimum' => true, 'minimum' => $minimum];
 
-        $actual = (new Faker)->getMinimum($schema);
+        $actual = (new Faker())->getMinimum($schema);
 
         // +1 mean exclusive
         $this->assertSame($actual, $minimum + 1);
@@ -61,7 +61,7 @@ class HelperTest extends TestCase
         $minimum = 300;
         $schema  = (object) ['exclusiveMinimum' => false, 'minimum' => $minimum];
 
-        $actual = (new Faker)->getMinimum($schema);
+        $actual = (new Faker())->getMinimum($schema);
 
         $this->assertSame($actual, $minimum);
     }
@@ -71,7 +71,7 @@ class HelperTest extends TestCase
         $minimum = 300;
         $schema  = (object) ['minimum' => $minimum];
 
-        $actual = (new Faker)->getMinimum($schema);
+        $actual = (new Faker())->getMinimum($schema);
 
         $this->assertSame($actual, $minimum);
     }
@@ -81,7 +81,7 @@ class HelperTest extends TestCase
         $expected = 7;
         $schema   = (object) ['multipleOf' => $expected];
 
-        $actual = (new Faker)->getMultipleOf($schema);
+        $actual = (new Faker())->getMultipleOf($schema);
 
         $this->assertSame($actual, $expected);
     }
@@ -91,14 +91,14 @@ class HelperTest extends TestCase
         $expected = 1;
         $schema   = (object) [];
 
-        $actual = (new Faker)->getMultipleOf($schema);
+        $actual = (new Faker())->getMultipleOf($schema);
 
         $this->assertSame($actual, $expected);
     }
 
     public function testGetInternetFakerInstanceMustReturnInstance()
     {
-        $actual = (new Faker)->getInternetFakerInstance();
+        $actual = (new Faker())->getInternetFakerInstance();
 
         $this->assertTrue($actual instanceof Internet);
     }
@@ -111,7 +111,7 @@ class HelperTest extends TestCase
         $schema    = (object) ['type' => 'string', 'format' => $format];
         $validator = new Validator();
 
-        $actual = (new Faker)->getFormattedValue($schema);
+        $actual = (new Faker())->getFormattedValue($schema);
         $validator->validate($actual, $schema);
 
         $this->assertTrue($validator->isValid());
@@ -121,11 +121,12 @@ class HelperTest extends TestCase
     {
         $this->expectException(Exception::class);
 
-        (new Faker)->getFormattedValue((object) ['format' => 'xxxxx']);
+        (new Faker())->getFormattedValue((object) ['format' => 'xxxxx']);
     }
 
     /**
      * @see testGetFormattedValueMustReturnValidValue
+     *
      * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
      */
     public function getFormats(): array

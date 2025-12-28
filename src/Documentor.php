@@ -6,9 +6,6 @@ class Documentor
 {
     protected $generator;
 
-    /**
-     * @param Generator $generator
-     */
     public function __construct(Generator $generator)
     {
         $this->generator = $generator;
@@ -40,16 +37,17 @@ class Documentor
                     if ($reflparameter->isDefaultValueAvailable()) {
                         $parameter .= ' = ' . var_export($reflparameter->getDefaultValue(), true);
                     }
-                    $parameters [] = $parameter;
+                    $parameters[] = $parameter;
                 }
-                $parameters = $parameters ? '(' . join(', ', $parameters) . ')' : '';
+                $parameters = $parameters ? '(' . implode(', ', $parameters) . ')' : '';
                 try {
                     $example = $this->generator->format($methodName);
-                } catch (\InvalidArgumentException $e) {
+                }
+                catch (\InvalidArgumentException $e) {
                     $example = '';
                 }
                 if (is_array($example)) {
-                    $example = "array('" . join("', '", $example) . "')";
+                    $example = "array('" . implode("', '", $example) . "')";
                 }
                 elseif ($example instanceof \DateTime) {
                     $example = "DateTime('" . $example->format('Y-m-d H:i:s') . "')";

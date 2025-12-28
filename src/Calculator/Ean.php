@@ -4,7 +4,6 @@ namespace Poppy\Faker\Calculator;
 
 /**
  * Utility class for validating EAN-8 and EAN-13 numbers
- *
  */
 class Ean
 {
@@ -17,9 +16,6 @@ class Ean
      * Computes the checksum of an EAN number.
      *
      * @see https://en.wikipedia.org/wiki/International_Article_Number
-     *
-     * @param string $digits
-     * @return int
      */
     public static function checksum(string $digits): int
     {
@@ -43,7 +39,6 @@ class Ean
      * the checksum is correct.
      *
      * @param string $ean An EAN number
-     * @return boolean
      */
     public static function isValid(string $ean): bool
     {

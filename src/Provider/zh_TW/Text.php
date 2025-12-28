@@ -21,8 +21,8 @@ class Text extends \Poppy\Faker\Provider\Text
      * Title: 吶喊 Call to Arms (1922)
      * Author: 魯迅 Lu Xun
      * Language: Traditional Chinese
+     *
      * @see https://zh.wikisource.org/wiki/%E5%90%B6%E5%96%8A
-     * @var string
      */
     protected static string $baseText = <<<'EOT'
 我在年青時候也曾經做過許多夢，後來大半忘卻了，但自己也並不以爲可惜。所謂回憶者，雖說可以使人歡欣，有時也不免使人寂寞，使精神的絲縷還牽著已逝的寂寞的時光，又有什麼意味呢，而我偏苦于不能全忘卻，這不能全忘的一部分，到現在便成了《吶喊》的來由。
@@ -862,6 +862,7 @@ EOT;
      * Convert original string to utf-8 encoding.
      *
      * @param string $text
+     *
      * @return array
      */
     protected static function utf8Encoding($text)
@@ -872,7 +873,7 @@ EOT;
 
         $countChars = count($chars);
 
-        for ($i = 0; $i < $countChars; ++$i) {
+        for ($i = 0; $i < $countChars; $i++) {
             $temp = $chars[$i];
 
             $ord = ord($chars[$i]);
@@ -880,19 +881,19 @@ EOT;
             switch (true) {
                 case $ord > 251:
                     $temp .= $chars[++$i];
-                // no break
+                    // no break
                 case $ord > 247:
                     $temp .= $chars[++$i];
-                // no break
+                    // no break
                 case $ord > 239:
                     $temp .= $chars[++$i];
-                // no break
+                    // no break
                 case $ord > 223:
                     $temp .= $chars[++$i];
-                // no break
+                    // no break
                 case $ord > 191:
                     $temp .= $chars[++$i];
-                // no break
+                    // no break
             }
 
             $encoding[] = $temp;

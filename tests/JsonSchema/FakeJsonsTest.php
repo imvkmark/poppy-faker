@@ -9,9 +9,6 @@ use Poppy\Faker\JsonSchema\FakeJsons;
 
 class FakeJsonsTest extends TestCase
 {
-    /**
-     * @var FakeJsons
-     */
     protected FakeJsons $fakeJsons;
 
     protected function setUp(): void
@@ -30,6 +27,4 @@ class FakeJsonsTest extends TestCase
         }
         $this->assertTrue($validator->isValid());
     }
-
-
 }

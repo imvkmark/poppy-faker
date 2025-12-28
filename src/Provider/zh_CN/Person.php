@@ -18,7 +18,6 @@ class Person extends \Poppy\Faker\Provider\Person
 
     protected static array $titleFemale = ['女士', '小姐', '夫人', '太太', '医生', '老师', '教授', '律师', '经理'];
 
-
     /**
      * @var array 全国区域代码 共3131
      */
@@ -288,7 +287,7 @@ class Person extends \Poppy\Faker\Provider\Person
 
     /**
      * 身份证生成入口方法
-     * @return string
+     *
      * @throws Exception
      */
     public static function idNumber(): string
@@ -306,7 +305,7 @@ class Person extends \Poppy\Faker\Provider\Person
         $year = [$start_year, $end_year];
         sort($year);
         [$start_year, $end_year] = $year;
-        $total_region = count(self::$region);
+        $total_region            = count(self::$region);
 
         $year_start   = mktime(0, 0, 0, 1, 1, $start_year);
         $year_end     = mktime(0, 0, 0, 12, 31, $end_year);
@@ -315,7 +314,7 @@ class Person extends \Poppy\Faker\Provider\Person
         $birth_format = date('Ymd', $birth);
         $suffix_a     = random_int(0, 9);
         $suffix_b     = random_int(0, 9);
-        $suffix_c     = random_int(0, 9);//male or female
+        $suffix_c     = random_int(0, 9); // male or female
         $base         = self::$region[$seed] . $birth_format . $suffix_a . $suffix_b . $suffix_c;
 
         return $base . self::calcCrc($base);
@@ -325,8 +324,6 @@ class Person extends \Poppy\Faker\Provider\Person
      * 根据身份证前17位计算校验码
      *
      * @param string $base 校验
-     *
-     * @return string
      */
     private static function calcCrc($base): string
     {
@@ -340,7 +337,7 @@ class Person extends \Poppy\Faker\Provider\Person
             $sums += $base[$i] * $factor[$i];
         }
 
-        //10X98765432
+        // 10X98765432
         $mods = $sums % 11;
 
         switch ($mods) {

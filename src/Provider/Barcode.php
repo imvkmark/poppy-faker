@@ -12,7 +12,9 @@ class Barcode extends Base
 {
     /**
      * Get a random EAN13 barcode.
+     *
      * @return string
+     *
      * @example '4006381333931'
      */
     public function ean13()
@@ -22,7 +24,9 @@ class Barcode extends Base
 
     /**
      * Get a random EAN8 barcode.
+     *
      * @return string
+     *
      * @example '73513537'
      */
     public function ean8()
@@ -32,9 +36,11 @@ class Barcode extends Base
 
     /**
      * Get a random ISBN-10 code
+     *
      * @link    http://en.wikipedia.org/wiki/International_Standard_Book_Number
      *
      * @return string
+     *
      * @example '4881416324'
      */
     public function isbn10()
@@ -46,9 +52,11 @@ class Barcode extends Base
 
     /**
      * Get a random ISBN-13 code
+     *
      * @link    http://en.wikipedia.org/wiki/International_Standard_Book_Number
      *
      * @return string
+     *
      * @example '9790404436093'
      */
     public function isbn13()
@@ -63,7 +71,7 @@ class Barcode extends Base
      *
      * @param string $input
      *
-     * @return integer
+     * @return int
      */
     protected static function eanChecksum($input)
     {
@@ -72,17 +80,20 @@ class Barcode extends Base
         foreach (str_split($input) as $n => $digit) {
             $sums += $digit * $sequence[$n % 2];
         }
+
         return (10 - $sums % 10) % 10;
     }
 
     /**
      * ISBN-10 check digit
+     *
      * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digits
      *
      * @param string $input ISBN without check-digit
-     * @throws LengthException When wrong input length passed
      *
      * @return string Check digit
+     *
+     * @throws LengthException When wrong input length passed
      */
     protected static function isbnChecksum($input): string
     {

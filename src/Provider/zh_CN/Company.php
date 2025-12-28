@@ -32,6 +32,7 @@ class Company extends \Poppy\Faker\Provider\Company
 
     /**
      * @see blog.renren.com/share/223844062/2387611567
+     *
      * @var array
      */
     protected static $catchPhrase = [

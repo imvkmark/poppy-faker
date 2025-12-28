@@ -143,9 +143,10 @@ class Person extends \Poppy\Faker\Provider\Person
     public static function randomName($pool, $n)
     {
         $name = '';
-        for ($i = 0; $i < $n; ++$i) {
+        for ($i = 0; $i < $n; $i++) {
             $name .= static::randomElement($pool);
         }
+
         return $name;
     }
 
@@ -168,9 +169,9 @@ class Person extends \Poppy\Faker\Provider\Person
      * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
      *
      * @return string Length 10 alphanumeric characters, begins with 1 latin character (birthplace),
-     * 1 number (gender) and then 8 numbers (the last one is check digit).
-     * @see https://en.wikipedia.org/wiki/National_Identification_Card_(Republic_of_China)
+     *                1 number (gender) and then 8 numbers (the last one is check digit).
      *
+     * @see https://en.wikipedia.org/wiki/National_Identification_Card_(Republic_of_China)
      */
     public function personalIdentityNumber($gender = null)
     {

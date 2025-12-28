@@ -6,7 +6,6 @@ class Payment extends \Poppy\Faker\Provider\Payment
 {
     /**
      * @see https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C%E5%88%97%E8%A1%A8
-     * @var array
      */
     protected static array $banks = [
         '渤海银行',
@@ -34,7 +33,6 @@ class Payment extends \Poppy\Faker\Provider\Payment
     ];
 
     /**
-     * @return string
      * @example '中国建设银行'
      */
     public static function bank(): string

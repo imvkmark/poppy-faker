@@ -10,19 +10,19 @@ use RuntimeException;
  */
 class Image extends Base
 {
-
     /**
      * Generate the URL that will return a random image
      *
      * Set randomize too false to remove the random GET parameter at the end of the url.
      * https://fakeimg.pl/
-     * @param integer     $width
-     * @param integer     $height
+     *
+     * @param int         $width
+     * @param int         $height
      * @param string|null $word
      * @param string      $font_color
      * @param string      $bg_color
      * @param string      $font_size
-     * @return string
+     *
      * @example https://jdc.jd.com/img/500x300?color=6190e8&text=poppy&textColor=ffffff
      */
     public static function imageUrl($width = 640, $height = 480, $word = '', $font_color = 'eae0d0', $bg_color = '282828', $font_size = ''): string
@@ -51,7 +51,7 @@ class Image extends Base
             $size = (($width / 10) <= 14)
                 ? 14
                 : (($width / 10) >= 100 ? 100 : round($width / 10));
-            $url  .= 'fs=' . $size . '&';
+            $url .= 'fs=' . $size . '&';
         }
 
         return $baseUrl . rtrim($url, '&?');
@@ -66,7 +66,9 @@ class Image extends Base
      * @param int  $width
      * @param int  $height
      * @param bool $fullPath
+     *
      * @return false|RuntimeException|string
+     *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
     public static function image($dir = null, $width = 640, $height = 480, $fullPath = true)

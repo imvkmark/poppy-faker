@@ -41,7 +41,9 @@ class Person extends Base
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @return string
+     *
      * @example 'John Doe'
      */
     public function name($gender = null)
@@ -61,7 +63,9 @@ class Person extends Base
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @return string
+     *
      * @example 'John'
      */
     public function firstName($gender = null)
@@ -88,6 +92,7 @@ class Person extends Base
 
     /**
      * @return string
+     *
      * @example 'Doe'
      */
     public function lastName()
@@ -97,7 +102,9 @@ class Person extends Base
 
     /**
      * @param string|null $gender 'male', 'female' or null for any
+     *
      * @return string
+     *
      * @example 'Mrs.'
      */
     public function title($gender = null)

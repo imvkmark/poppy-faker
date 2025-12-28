@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace Poppy\Faker\JsonSchema;
 
-
 use InvalidArgumentException;
 use LogicException;
 use Poppy\Faker\Factory;
@@ -19,8 +18,6 @@ final class Faker
 {
     /**
      * type-fake method map
-     *
-     * @var array
      */
     private array $fakers = [
         'null'    => 'fakeNull',
@@ -32,21 +29,18 @@ final class Faker
         'object'  => 'fakeObject',
     ];
 
-    /**
-     * @var string
-     */
     private string $schemaDir = '';
 
     /**
      * Create fake data with JSON schema
      *
-     * @param SplFileInfo|stdClass $schema Data structure written in JSON Schema
+     * @param SplFileInfo|stdClass $schema       Data structure written in JSON Schema
      * @param stdClass|null        $parentSchema parent schema when it is subschema
-     * @param string|null          $schemaDir forced directory in object loop
+     * @param string|null          $schemaDir    forced directory in object loop
      *
      * @throws UnsupportedTypeException Throw when unsupported type specified
      */
-    public function generate($schema, stdClass $parentSchema = null, string $schemaDir = null)
+    public function generate($schema, ?stdClass $parentSchema = null, ?string $schemaDir = null)
     {
         if ($schema instanceof SplFileInfo) {
             $file = (string) $schema->getRealPath();
@@ -83,7 +77,7 @@ final class Faker
             return call_user_func($faker, $schema);
         }
 
-        throw new LogicException;
+        throw new LogicException();
     }
 
     public function mergeObject(): object
@@ -94,7 +88,6 @@ final class Faker
         foreach ($objList as $obj) {
             array_push($merged, ...(array) $obj);
         }
-
 
         return (object) $merged;
     }
@@ -165,19 +158,19 @@ final class Faker
             // Date representation, as defined by RFC 3339, section 5.6.
             case 'date-time':
                 return DateTime::dateTime()->format(DATE_RFC3339);
-            // Internet email address, see RFC 5322, section 3.4.1.
+                // Internet email address, see RFC 5322, section 3.4.1.
             case 'email':
                 return $this->getInternetFakerInstance()->safeEmail();
-            // Internet host name, see RFC 1034, section 3.1.
+                // Internet host name, see RFC 1034, section 3.1.
             case 'hostname':
                 return $this->getInternetFakerInstance()->domainName();
-            // IPv4 address, according to dotted-quad ABNF syntax as defined in RFC 2673, section 3.2.
+                // IPv4 address, according to dotted-quad ABNF syntax as defined in RFC 2673, section 3.2.
             case 'ipv4':
                 return $this->getInternetFakerInstance()->ipv4();
-            // IPv6 address, as defined in RFC 2373, section 2.2.
+                // IPv6 address, as defined in RFC 2373, section 2.2.
             case 'ipv6':
                 return $this->getInternetFakerInstance()->ipv6();
-            // A universal resource identifier (URI), according to RFC3986.
+                // A universal resource identifier (URI), according to RFC3986.
             case 'uri':
                 return $this->getInternetFakerInstance()->url();
             default:
@@ -274,7 +267,7 @@ final class Faker
             $subschemas = $schema->items;
         }
         else {
-            throw new InvalidItemsException;
+            throw new InvalidItemsException();
         }
 
         $dummies    = [];

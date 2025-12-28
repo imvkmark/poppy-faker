@@ -4,21 +4,14 @@ declare(strict_types = 1);
 
 namespace Poppy\Faker\JsonSchema;
 
-
 use RuntimeException;
 use SplFileInfo;
 use stdClass;
 
 final class Ref
 {
-    /**
-     * @var Faker
-     */
     private Faker $faker;
 
-    /**
-     * @var string
-     */
     private string $schemaDir;
 
     public function __construct(Faker $faker, $schemaDir)
@@ -27,7 +20,7 @@ final class Ref
         $this->schemaDir = $schemaDir;
     }
 
-    public function __invoke(stdClass $schema, stdClass $parentSchema = null)
+    public function __invoke(stdClass $schema, ?stdClass $parentSchema = null)
     {
         $path = (string) $schema->{'$ref'};
         if ($path[0] === '#') {
@@ -50,7 +43,7 @@ final class Ref
         return $this->faker->generate($prop, null);
     }
 
-    private function externalRef(string $path, stdClass $parentSchema = null)
+    private function externalRef(string $path, ?stdClass $parentSchema = null)
     {
         $jsonFileName = substr($path, 0, 2) === './' ? substr($path, 2) : $path;
         $jsonPath     = sprintf('%s/%s', $this->schemaDir, $jsonFileName);

@@ -31,8 +31,6 @@ class UserAgent extends Base
 
     /**
      * Generate mac processor
-     *
-     * @return string
      */
     public static function macProcessor(): string
     {
@@ -41,8 +39,6 @@ class UserAgent extends Base
 
     /**
      * Generate linux processor
-     *
-     * @return string
      */
     public static function linuxProcessor(): string
     {
@@ -94,7 +90,7 @@ class UserAgent extends Base
             '(' . static::macPlatformToken() . ' rv:' . mt_rand(2, 6) . '.0) ' . $ver,
         ];
 
-        return "Mozilla/5.0 " . static::randomElement($platforms);
+        return 'Mozilla/5.0 ' . static::randomElement($platforms);
     }
 
     /**
@@ -120,10 +116,10 @@ class UserAgent extends Base
         $platforms = [
             '(Windows; U; ' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
             '(' . static::macPlatformToken() . ' rv:' . mt_rand(2, 6) . '.0; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
-            '(' . static::randomElement($mobileDevices) . ' ' . mt_rand(7, 8) . '_' . mt_rand(0, 2) . '_' . mt_rand(1, 2) . ' like Mac OS X; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . mt_rand(3, 4) . ".0.5 Mobile/8B" . mt_rand(111, 119) . " Safari/6$saf",
+            '(' . static::randomElement($mobileDevices) . ' ' . mt_rand(7, 8) . '_' . mt_rand(0, 2) . '_' . mt_rand(1, 2) . ' like Mac OS X; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . mt_rand(3, 4) . '.0.5 Mobile/8B' . mt_rand(111, 119) . " Safari/6$saf",
         ];
 
-        return "Mozilla/5.0 " . static::randomElement($platforms);
+        return 'Mozilla/5.0 ' . static::randomElement($platforms);
     }
 
     /**
@@ -138,7 +134,7 @@ class UserAgent extends Base
             '(' . static::windowsPlatformToken() . '; ' . static::randomElement(static::$lang) . ') Presto/2.' . mt_rand(8, 12) . '.' . mt_rand(160, 355) . ' Version/' . mt_rand(10, 12) . '.00',
         ];
 
-        return "Opera/" . mt_rand(8, 9) . '.' . mt_rand(10, 99) . ' ' . static::randomElement($platforms);
+        return 'Opera/' . mt_rand(8, 9) . '.' . mt_rand(10, 99) . ' ' . static::randomElement($platforms);
     }
 
     /**

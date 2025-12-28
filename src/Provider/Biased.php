@@ -14,17 +14,19 @@ class Biased extends Base
      * between $min and $max. Otherwise, two new doubles are created until the pair
      * is accepted.
      *
-     * @param integer  $min      Minimum value of the generated integers.
-     * @param integer  $max      Maximum value of the generated integers.
+     * @param int      $min      Minimum value of the generated integers.
+     * @param int      $max      Maximum value of the generated integers.
      * @param callable $function A function mapping x ∈ [0, 1] onto a double ∈ [0, 1]
-     * @return integer An integer between $min and $max.
+     *
+     * @return int An integer between $min and $max.
      */
     public function biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
     {
         do {
             $x = mt_rand() / mt_getrandmax();
             $y = mt_rand() / (mt_getrandmax() + 1);
-        } while (call_user_func($function, $x) < $y);
+        }
+        while (call_user_func($function, $x) < $y);
 
         return (int) floor($x * ($max - $min + 1) + $min);
     }
@@ -33,7 +35,7 @@ class Biased extends Base
      * 'unbiased' creates an unbiased distribution by giving
      * each value the same value of one.
      *
-     * @return integer
+     * @return int
      */
     protected static function unbiased()
     {
@@ -44,7 +46,7 @@ class Biased extends Base
      * 'linearLow' favors lower numbers. The probability decreases
      * in a linear fashion.
      *
-     * @return integer
+     * @return int
      */
     protected static function linearLow($x)
     {
@@ -55,7 +57,7 @@ class Biased extends Base
      * 'linearHigh' favors higher numbers. The probability increases
      * in a linear fashion.
      *
-     * @return integer
+     * @return int
      */
     protected static function linearHigh($x)
     {

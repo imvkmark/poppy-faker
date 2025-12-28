@@ -105,16 +105,19 @@ class Address extends Base
     /**
      * @example 'Japan'
      */
-    public static function country():string
+    public static function country(): string
     {
         return static::randomElement(static::$country);
     }
 
     /**
      * 经纬度范围由于采取的数据是有限的,这里需要给予限制
+     *
      * @param float|int $min
      * @param float|int $max
+     *
      * @return float Uses signed degrees format (returns a float number between -90 and 90)
+     *
      * @example '77.147489'
      */
     public static function latitude($min = -85.05, $max = 85.05): float
@@ -125,7 +128,9 @@ class Address extends Base
     /**
      * @param float|int $min
      * @param float|int $max
+     *
      * @return float Uses signed degrees format (returns a float number between -180 and 180)
+     *
      * @example '86.211205'
      */
     public static function longitude($min = -180, $max = 180)
@@ -134,7 +139,8 @@ class Address extends Base
     }
 
     /**
-     * @return array  [latitude, longitude]
+     * @return array [latitude, longitude]
+     *
      * @example array('77.147489', '86.211205')
      */
     public static function localCoordinates()

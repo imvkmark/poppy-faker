@@ -4,7 +4,6 @@ namespace Poppy\Faker\Provider\zh_CN;
 
 class Address extends \Poppy\Faker\Provider\Address
 {
-
     protected static $cites = [
         '北京', '上海', '天津', '重庆',
         '哈尔滨', '长春', '沈阳', '呼和浩特',

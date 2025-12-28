@@ -33,7 +33,6 @@ class Text extends \Poppy\Faker\Provider\Text
      * THE MILLENNIUM FULCRUM EDITION 3.0
      *
      * @see http://www.gutenberg.org/cache/epub/11/pg11.txt
-     * @var string
      */
     protected static string $baseText = <<<'EOT'
 CHAPTER I. Down the Rabbit-Hole

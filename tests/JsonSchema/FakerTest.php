@@ -20,7 +20,7 @@ class FakerTest extends TestCase
         $schema    = $this->getFixture($type);
         $validator = new Validator();
 
-        $actual = (new Faker)->generate($schema);
+        $actual = (new Faker())->generate($schema);
         $validator->validate($actual, $schema);
 
         $this->assertTrue($validator->isValid(), (string) json_encode($validator->getErrors(), JSON_PRETTY_PRINT));
@@ -34,7 +34,7 @@ class FakerTest extends TestCase
         $schema    = $this->getFile($type);
         $validator = new Validator();
 
-        $actual = (new Faker)->generate(new SplFileInfo($schema));
+        $actual = (new Faker())->generate(new SplFileInfo($schema));
         $validator->validate($actual, $schema);
 
         $this->assertTrue($validator->isValid(), (string) json_encode($validator->getErrors(), JSON_PRETTY_PRINT));
@@ -43,7 +43,7 @@ class FakerTest extends TestCase
     public function testGenerateInvalidParameter()
     {
         $this->expectException(InvalidArgumentException::class);
-        (new Faker)->generate(null);
+        (new Faker())->generate(null);
     }
 
     public function getTypes(): array
@@ -83,6 +83,6 @@ class FakerTest extends TestCase
     {
         $this->expectException(UnsupportedTypeException::class);
 
-        (new Faker)->generate((object) ['type' => 'xxxxx']);
+        (new Faker())->generate((object) ['type' => 'xxxxx']);
     }
 }

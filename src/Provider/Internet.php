@@ -166,6 +166,7 @@ class Internet extends Base
     public function url(): string
     {
         $format = static::randomElement(static::$urlFormats);
+
         return $this->generator->parse($format);
     }
 
@@ -182,7 +183,7 @@ class Internet extends Base
         }
         $words = $this->generator->words($nbWords);
 
-        return join('-', $words);
+        return implode('-', $words);
     }
 
     /**
@@ -200,10 +201,10 @@ class Internet extends Base
     {
         $res = [];
         for ($i = 0; $i < 8; $i++) {
-            $res [] = dechex(mt_rand(0, "65535"));
+            $res[] = dechex(mt_rand(0, '65535'));
         }
 
-        return join(':', $res);
+        return implode(':', $res);
     }
 
     /**
@@ -213,11 +214,11 @@ class Internet extends Base
     {
         if (static::numberBetween(0, 1) === 0) {
             // 10.x.x.x range
-            return long2ip(static::numberBetween(ip2long("10.0.0.0"), ip2long("10.255.255.255")));
+            return long2ip(static::numberBetween(ip2long('10.0.0.0'), ip2long('10.255.255.255')));
         }
 
         // 192.168.x.x range
-        return long2ip(static::numberBetween(ip2long("192.168.0.0"), ip2long("192.168.255.255")));
+        return long2ip(static::numberBetween(ip2long('192.168.0.0'), ip2long('192.168.255.255')));
     }
 
     /**
@@ -226,14 +227,15 @@ class Internet extends Base
     public static function macAddress()
     {
         for ($i = 0; $i < 6; $i++) {
-            $mac[] = sprintf('%02X', static::numberBetween(0, 0xff));
+            $mac[] = sprintf('%02X', static::numberBetween(0, 0xFF));
         }
+
         return implode(':', $mac);
     }
 
     protected static function transliterate($string)
     {
-        if (0 === preg_match('/[^A-Za-z0-9_.]/', $string)) {
+        if (preg_match('/[^A-Za-z0-9_.]/', $string) === 0) {
             return $string;
         }
 
