@@ -20,7 +20,8 @@
         "php": "^8.2"
     },
     "require-dev": {
-        "ext-intl": "*"
+        "ext-intl": "*",
+        "justinrainbow/json-schema": "^6.1"
     },
     "autoload": {
         "psr-4": {
